@@ -1,0 +1,20 @@
+    1  yum install wget
+   22  yum groupinstall "Development tools"
+   33  wget https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.14.108.tar.gz
+   34  tar zxvf linux-4.14.108.tar.gz 
+   35  cd linux-4.14.108/
+   45  make olddefconfig
+   46  make 
+   47  yum install bc
+   48  make 
+   49  yum groupinstall "Development tools"
+   50  yum search https://forums.gentoo.org/viewtopic-t-1092326-start-0.html
+   51  yum search libelf-dev
+   52  yum install elfu
+   53  make 
+   60  yum install openssl-devel
+   61  make 
+   62  make install
+   71  make modules_install
+   75  make  install
+   76  reboot
