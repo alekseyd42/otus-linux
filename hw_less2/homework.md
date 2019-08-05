@@ -2,7 +2,7 @@
 сделал инициализацию raid 10 из 6ти дисков
 сделал раздел, форматирование в ext4 и монтирование в /mnt из файла /etc/fstab
 
-    [Vagrantfile](Vagrantfile) 
+    [Vagrantfile](https://github.com/alekseyd42/otus-linux/blob/master/hw_less2/Vagrantfile) 
 Вывод lsblk и df -h
 
 [vagrant@otuslinux ~]$ lsblk                        
