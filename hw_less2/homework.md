@@ -1,5 +1,6 @@
 1.Добавил в Vagrantfile файл секции ещё для трех дисков (sata 5-7) 
     [Vagrantfile](Vagrantfile) 
+
 2.Увидел диски в системе 
 [vagrant@otuslinux ~]$ lsblk              
 NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
