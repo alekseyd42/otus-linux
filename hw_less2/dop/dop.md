@@ -3,6 +3,7 @@
 https://habr.com/ru/post/248073/
 
 lsblk после загрузки 
+
 ```bash
 [root@otuslinux vagrant]# lsblk          
 NAME   MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
@@ -30,7 +31,7 @@ blkid
 меняю в /etc/fstab UUID sda на UUID md0
 
 ```bash
-mv /boot/initramfs-3.10.0-123.el7.x86_64.img /boot/initramfs-3.10.0-123.el7.x86_64.img.bak
+mv /boot/initramfs.img /boot/initramfs.img.bak
 dracut /boot/initramfs-$(uname -r).img $(uname -r)
 
 «rd.auto=1» явно через «GRUB», «GRUB_CMDLINE_LINUX»:
