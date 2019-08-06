@@ -62,7 +62,7 @@ sdh         8:112  0   250M  0 disk
 *Статус рейда:*
 [root@otuslinux ~]# cat /proc/mdstat                                   
 Personalities : [raid10]                                               
-md0 : active raid10 sdg[5] sdf[4] sde[3] sdd[2] sdb[0] sdc[1] sdh[6](S)
+md0 : active raid10 sdg[5] sdf[4] sde[3] sdd[2] sdb[0] sdc[1] sdh[6]\(S)
       761856 blocks super 1.2 512K chunks 2 near-copies [6/6] [UUUUUU] 
                                                                        
 unused devices: <none>                                                 
@@ -91,7 +91,7 @@ sudo mdadm /dev/md0 -f /dev/sdh
 Увидел, что рейд работает не полностью
 
 Personalities : [raid10]                                                  
-md0 : active raid10 sdg[5](F) sdf[4] sde[3] sdd[2] sdb[0] sdc[1] sdh[6](F)
+md0 : active raid10 sdg[5]\(F) sdf[4] sde[3] sdd[2] sdb[0] sdc[1] sdh[6]\(F)
       761856 blocks super 1.2 512K chunks 2 near-copies [6/5] [UUUUU_]
     
     3.Удалил диски сбойные диски
@@ -115,7 +115,7 @@ mdadm: added /dev/sdh
 Рейд в нормальном состояние (Radi10 + spare)
 
 Personalities : [raid10]                                               
-md0 : active raid10 sdh[7](S) sdg[6] sdf[4] sde[3] sdd[2] sdb[0] sdc[1]
+md0 : active raid10 sdh[7]\(S) sdg[6] sdf[4] sde[3] sdd[2] sdb[0] sdc[1]
       761856 blocks super 1.2 512K chunks 2 near-copies [6/6] [UUUUUU] 
 
 
