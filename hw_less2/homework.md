@@ -87,7 +87,8 @@ md0 : active raid10 sdg[5](F) sdf[4] sde[3] sdd[2] sdb[0] sdc[1] sdh[6]
       761856 blocks super 1.2 512K chunks 2 near-copies [6/6] [UUUUUU] 
                                                                        
 unused devices: <none>                                                 
-```    
+```
+
     2.пометил диск sdh как сбойный
 
 sudo mdadm /dev/md0 -f /dev/sdh
@@ -98,7 +99,9 @@ Personalities : [raid10]
 md0 : active raid10 sdg[5](F) sdf[4] sde[3] sdd[2] sdb[0] sdc[1] sdh[6](F)
       761856 blocks super 1.2 512K chunks 2 near-copies [6/5] [UUUUU_]
 ```    
+
     3.Удалил диски сбойные диски
+
 ```bash
 [vagrant@otuslinux ~]$ sudo mdadm /dev/md0 -r /dev/sdg 
 mdadm: hot removed /dev/sdg from /dev/md0              
@@ -109,6 +112,7 @@ Personalities : [raid10]
 md0 : active raid10 sdf[4] sde[3] sdd[2] sdb[0] sdc[1]                 
       761856 blocks super 1.2 512K chunks 2 near-copies [6/5] [UUUUU_] 
 ```
+
     4.Добавил свежие диски
 
 ```bash
