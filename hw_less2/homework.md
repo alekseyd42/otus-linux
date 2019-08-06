@@ -5,6 +5,7 @@
 [Vagrantfile](https://github.com/alekseyd42/otus-linux/blob/master/hw_less2/Vagrantfile) 
 
 *Вывод lsblk после старта ВМ:*
+```bash
 [vagrant@otuslinux ~]$ lsblk                    
 NAME      MAJ:MIN RM   SIZE RO TYPE   MOUNTPOINT
 sda         8:0    0    40G  0 disk             
@@ -16,7 +17,6 @@ sdb         8:16   0   250M  0 disk
   |-md0p3 259:5    0   150M  0 md               
   |-md0p4 259:0    0 148.5M  0 md               
   `-md0p5 259:1    0   147M  0 md                 
-
 sdc         8:32   0   250M  0 disk             
 `-md0       9:0    0   744M  0 raid10           
   |-md0p1 259:3    0   147M  0 md               
@@ -24,7 +24,6 @@ sdc         8:32   0   250M  0 disk
   |-md0p3 259:5    0   150M  0 md               
   |-md0p4 259:0    0 148.5M  0 md               
   `-md0p5 259:1    0   147M  0 md               
-
 sdd         8:48   0   250M  0 disk             
 `-md0       9:0    0   744M  0 raid10           
   |-md0p1 259:3    0   147M  0 md               
@@ -32,7 +31,6 @@ sdd         8:48   0   250M  0 disk
   |-md0p3 259:5    0   150M  0 md               
   |-md0p4 259:0    0 148.5M  0 md               
   `-md0p5 259:1    0   147M  0 md               
-
 sde         8:64   0   250M  0 disk             
 `-md0       9:0    0   744M  0 raid10           
   |-md0p1 259:3    0   147M  0 md               
@@ -40,7 +38,6 @@ sde         8:64   0   250M  0 disk
   |-md0p3 259:5    0   150M  0 md               
   |-md0p4 259:0    0 148.5M  0 md               
   `-md0p5 259:1    0   147M  0 md               
-
 sdf         8:80   0   250M  0 disk             
 `-md0       9:0    0   744M  0 raid10           
   |-md0p1 259:3    0   147M  0 md               
@@ -48,7 +45,6 @@ sdf         8:80   0   250M  0 disk
   |-md0p3 259:5    0   150M  0 md               
   |-md0p4 259:0    0 148.5M  0 md               
   `-md0p5 259:1    0   147M  0 md               
-
 sdg         8:96   0   250M  0 disk             
 `-md0       9:0    0   744M  0 raid10           
   |-md0p1 259:3    0   147M  0 md               
@@ -56,7 +52,6 @@ sdg         8:96   0   250M  0 disk
   |-md0p3 259:5    0   150M  0 md               
   |-md0p4 259:0    0 148.5M  0 md               
   `-md0p5 259:1    0   147M  0 md               
-
 sdh         8:112  0   250M  0 disk             
 `-md0       9:0    0   744M  0 raid10           
   |-md0p1 259:3    0   147M  0 md               
@@ -64,7 +59,7 @@ sdh         8:112  0   250M  0 disk
   |-md0p3 259:5    0   150M  0 md               
   |-md0p4 259:0    0 148.5M  0 md               
   `-md0p5 259:1    0   147M  0 md               
-
+ ```
 
 
 *Статус рейда:*
