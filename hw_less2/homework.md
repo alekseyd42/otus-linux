@@ -79,6 +79,7 @@ Every 2.0s: cat /proc/mdstat
                                                                        
 Personalities : [raid10]                                               
 md0 : active raid10 sdg[5](F) sdf[4] sde[3] sdd[2] sdb[0] sdc[1] sdh[6]
+      
       761856 blocks super 1.2 512K chunks 2 near-copies [6/6] [UUUUUU] 
                                                                        
 unused devices: <none>                                                 
