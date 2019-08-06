@@ -70,8 +70,11 @@ unused devices: <none>
 ***Сломал рейд***
 
     1.пометил диск sdg как сбойный
-    sudo mdadm /dev/md0 -f /dev/sdg
+
+sudo mdadm /dev/md0 -f /dev/sdg
+
 Увидел , что spare drive заменил его 
+
 Every 2.0s: cat /proc/mdstat                                           
                                                                        
 Personalities : [raid10]                                               
@@ -81,8 +84,11 @@ md0 : active raid10 **sdg[5](F)** sdf[4] sde[3] sdd[2] sdb[0] sdc[1] **sdh[6]**
 unused devices: <none>                                                 
     
     2.пометил диск sdh как сбойный
+
 sudo mdadm /dev/md0 -f /dev/sdh
-увидел, что рейд работает не полностью
+
+Увидел, что рейд работает не полностью
+
 Personalities : [raid10]                                                  
 md0 : active raid10 **sdg[5](F)** sdf[4] sde[3] sdd[2] sdb[0] sdc[1] **sdh[6](F)**
       761856 blocks super 1.2 512K chunks 2 near-copies [6/5] **[UUUUU_]**
@@ -106,6 +112,7 @@ mdadm: added /dev/sdg
 mdadm: added /dev/sdh                                  
 
 Рейд в нормальном состояние (Radi10 + spare)
+
 Personalities : [raid10]                                               
 md0 : active raid10 sdh[7](S) sdg[6] sdf[4] sde[3] sdd[2] sdb[0] sdc[1]
       761856 blocks super 1.2 512K chunks 2 near-copies [6/6] [UUUUUU] 
