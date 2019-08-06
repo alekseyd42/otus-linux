@@ -67,7 +67,8 @@ md0 : active raid10 sdg[5] sdf[4] sde[3] sdd[2] sdb[0] sdc[1] sdh[6](S)
                                                                        
 unused devices: <none>                                                 
 
-*Сломал рейд*
+***Сломал рейд***
+
     1.пометил диск sdg как сбойный
     sudo mdadm /dev/md0 -f /dev/sdg
 Увидел , что spare drive заменил его 
