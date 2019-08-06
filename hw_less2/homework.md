@@ -67,7 +67,7 @@ md0 : active raid10 sdg[5] sdf[4] sde[3] sdd[2] sdb[0] sdc[1] sdh[6](S)
                                                                        
 unused devices: <none>                                                 
 
-***Сломал рейд***
+***Сломал/починил рейд***
 
     1.пометил диск sdg как сбойный
 
@@ -78,7 +78,7 @@ sudo mdadm /dev/md0 -f /dev/sdg
 Every 2.0s: cat /proc/mdstat                                           
                                                                        
 Personalities : [raid10]                                               
-md0 : active raid10 **sdg[5](F)** sdf[4] sde[3] sdd[2] sdb[0] sdc[1] **sdh[6]**
+md0 : active raid10 sdg[5](F) sdf[4] sde[3] sdd[2] sdb[0] sdc[1] sdh[6]
       761856 blocks super 1.2 512K chunks 2 near-copies [6/6] [UUUUUU] 
                                                                        
 unused devices: <none>                                                 
@@ -90,8 +90,8 @@ sudo mdadm /dev/md0 -f /dev/sdh
 Увидел, что рейд работает не полностью
 
 Personalities : [raid10]                                                  
-md0 : active raid10 ** sdg[5](F) ** sdf[4] sde[3] sdd[2] sdb[0] sdc[1] ** sdh[6](F) **
-      761856 blocks super 1.2 512K chunks 2 near-copies [6/5] **[UUUUU_]**
+md0 : active raid10 sdg[5](F) sdf[4] sde[3] sdd[2] sdb[0] sdc[1] sdh[6](F)
+      761856 blocks super 1.2 512K chunks 2 near-copies [6/5] [UUUUU_]
     
     3.Удалил диски сбойные диски
 
