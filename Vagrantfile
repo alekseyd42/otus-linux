@@ -82,14 +82,7 @@ Vagrant.configure("2") do |config|
 	      mkdir -p ~root/.ssh
               cp ~vagrant/.ssh/auth* ~root/.ssh
 	      yum install -y mdadm smartmontools hdparm gdisk
-              mdadm --create /dev/md0 --level=10 --raid-devices=6 /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg
-              parted /dev/md0 mklabel msdos
-              parted /dev/md0 mkpart primary ext4 750MB 100%
-              mkfs.ext4 /dev/md0
-              echo '/dev/md0 /mnt ext4 defaults 0 0' >> /etc/fstab 
-              mount /mnt  
-
-  	  SHELL
+         	  SHELL
 
       end
   end
