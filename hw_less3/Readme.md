@@ -197,6 +197,7 @@
 - *на нашей куче дисков попробовать поставить btrfs/zfs - с кешем, снэпшотами - разметить здесь каталог /opt
 
    - установка
+  
       инфу взял отсюда:
 
       https://github.com/zfsonlinux/zfs/wiki/RHEL-and-CentOS
@@ -204,7 +205,7 @@
       https://habr.com/ru/post/268807/
 
       https://www.freebsd.org/cgi/man.cgi?query=zfs&manpath=FreeBSD+8.4-RELEASE
-      
+
       https://docs.oracle.com/cd/E19253-01/820-0836/index.html
 
    ```bash
