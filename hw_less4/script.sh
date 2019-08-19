@@ -10,7 +10,7 @@ do
     #Timestamp
     #Указываем логфайл для парсинга
     logfile='access.log' 
-    #Проверяем существование файла с таймстампом
+    #Проверяем существование файла с таймстампом(fl)
     #Если файла нет, то создаем его и помещаем в него тиаймстамп первой строки из файла access.log
     if [ ! -f fl ]
     then 
@@ -70,6 +70,9 @@ do
     printf "ALL CODES:"'\n' >> $rezfile
     echo "${rf[@]}"|backcodes >> $rezfile
     sendmail
+    echo "$lts" >> fl
+    #удалял файл для тестов
+    #rm -rf fl 
  #Конец скрипта   
     exit;
 done  
