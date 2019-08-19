@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 #/usr/bin/env bash
-##защита от двойного запуска
 lockfile=/tmp/lockfile
 rezfile=/tmp/rezfile
+##защита от двойного запуска
 if ( set -o noclobber; echo "$$" > "$lockfile") 2> /dev/null;
 then   trap 'rm -f "$lockfile"; exit $?' INT TERM EXIT KILL   
 while true   
 do
     #Timestamp
-    #awk 'NR == '1' P{print $4}' ./access.log|awk -F "/" '{print $3}'>fl
     #Указываем логфайл для парсинга
     logfile='access.log' 
     #Проверяем существование файла с таймстампом
@@ -24,7 +23,7 @@ do
     ts=$(cat fl)
     fl=$(awk /$ts/'{print NR}' $logfile)
     fi
-    #находим в логфайле номер последней строки, до которой будем читать лог
+    #находим в логфайле номер последней строки, до которой будем читать лог и значение timestamp последней строки
     ll=$(wc $logfile |awk '{print $1}')
     lts=$(awk 'NR == '$ll' {print $4}' $logfile|cut -d "/" -f3)
     #функция формирует вывод,по временному диапазону , который мы будем парсить(от fl до ll)
@@ -42,18 +41,21 @@ do
     function top_query {
     awk {'print $7'}|sort|uniq -c|sort -nr|head
     }
+     #аргументы для поиска всех кодов ошибок
     function errors {
     awk {'print $9'}|awk /[4-5][0-9]/|sort|uniq -c|sort -nr
     }
+     #аргументы для поиска всех кодов 
     function backcodes {
     awk {'print $9'}|sort|uniq -c|sort -nr
     }
+    #отправка почты 
     function sendmail {
     mail -s "Rez" vagrant < $rezfile
     rm -rf $rezfile
     }
 
-
+#Скрипт
     rf=$(readfile)
     IFS='\n'
     printf "Start time:"$ts'\n' >> $rezfile	
