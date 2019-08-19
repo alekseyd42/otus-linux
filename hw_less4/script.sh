@@ -2,6 +2,7 @@
 #/usr/bin/env bash
 ##защита от двойного запуска
 lockfile=/tmp/lockfile
+rezfile=/tmp/rezfile
 if ( set -o noclobber; echo "$$" > "$lockfile") 2> /dev/null;
 then   trap 'rm -f "$lockfile"; exit $?' INT TERM EXIT KILL   
 while true   
@@ -15,7 +16,9 @@ do
     if [ ! -f fl ]
     then 
     touch fl
-    echo $(awk 'NR == '1' {print $4}' access.log)|cut -d "/" -f3 >fl
+    echo $(awk 'NR == '1' {print $4}' $logfile)|cut -d "/" -f3 >fl
+    ts=$(cat fl)
+    fl=$(awk /$ts/{'print NR'} $logfile)
     #Если файл есть, то читаем таймстамп и находим номер строки , с котрого будем парсить лог
     else
     ts=$(cat fl)
@@ -23,6 +26,7 @@ do
     fi
     #находим в логфайле номер последней строки, до которой будем читать лог
     ll=$(wc $logfile |awk '{print $1}')
+    lts=$(awk 'NR == '$ll' {print $4}' $logfile|cut -d "/" -f3)
     #функция формирует вывод,по временному диапазону , который мы будем парсить(от fl до ll)
     function readfile {
     for ((i = $fl; i <= $ll; i++))
@@ -36,18 +40,34 @@ do
     }
     #аргументы для поиска топ 10 запрашиваемых страниц
     function top_query {
-    awk '{print $7}'|sort|uniq -c|sort -nr|head
+    awk {'print $7'}|sort|uniq -c|sort -nr|head
     }
+    function errors {
+    awk {'print $9'}|awk /[4-5][0-9]/|sort|uniq -c|sort -nr
+    }
+    function backcodes {
+    awk {'print $9'}|sort|uniq -c|sort -nr
+    }
+    function sendmail {
+    mail -s "Rez" vagrant < $rezfile
+    rm -rf $rezfile
+    }
+
 
     rf=$(readfile)
     IFS='\n'
-    printf "TOP IP:"'\n' 
-    printf '\n'
-    echo "${rf[@]}"|top_ip
-    printf "TOP_QUERY:"'\n'
-    echo "${rf[@]}"|top_query
-    
-    
+    printf "Start time:"$ts'\n' >> $rezfile	
+    printf "End time:"$lts'\n' >> $rezfile
+    printf "TOP IP:"'\n' >> $rezfile
+    printf '\n' >> $rezfile
+    echo "${rf[@]}"|top_ip >> $rezfile
+    printf "TOP_QUERY:"'\n' >> $rezfile
+    echo "${rf[@]}"|top_query >> $rezfile
+    printf "All Errors:"'\n' >> $rezfile
+    echo "${rf[@]}"|errors >> $rezfile
+    printf "ALL CODES:"'\n' >> $rezfile
+    echo "${rf[@]}"|backcodes >> $rezfile
+    sendmail
  #Конец скрипта   
     exit;
 done  

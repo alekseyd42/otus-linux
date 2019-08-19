@@ -1,14 +1,12 @@
-#/usr/bin/env bash
-lockfile=/tmp/lockfile
-if ( set -o noclobber; echo "$$" > "$lockfile") 2> /dev/null;
-then   trap 'rm -f "$lockfile"; exit $?' INT TERM EXIT KILL   
-while true   
-    do
-       echo 123  
-    done  
-rm -f "$lockfile"  
-trap - INT TERM EXIT KILL
-else  
-echo "Failed to acquire lockfile: $lockfile."  
-echo "Held by $(cat $lockfile)" 
-fi
+#!/usr/bin/env bash
+test1='test1'
+test2='test2'
+test3='test3'
+rez=()
+rez+=( $test1 )
+rez+=( $test2 )
+rez+=( $test3 )
+echo '======'
+IFS=$'\n'
+echo "${rez[*]}"
+mail -s "Script done" dubinskiy.a  
