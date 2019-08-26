@@ -1,0 +1,5 @@
+[hwrepo]
+name=HW-REPO
+baseurl=http://86.62.114.220
+enable=1
+gpgcheck=0

@@ -1,0 +1,1334 @@
+execve("/usr/bin/ps", ["ps", "ax"], 0x7fffb5b84788 /* 62 vars */) = 0
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/lib64/libprocps.so.7", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/lib64/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/lib64/libsystemd.so.0", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/lib64/librt.so.1", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/lib64/liblzma.so.5", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/lib64/liblz4.so.1", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/lib64/libgcrypt.so.20", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/lib64/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/lib64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/lib64/libgpg-error.so.0", O_RDONLY|O_CLOEXEC) = 3
+access("/etc/system-fips", F_OK)        = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/proc/self/auxv", O_RDONLY) = 3
+openat(AT_FDCWD, "/proc/sys/kernel/osrelease", O_RDONLY) = 3
+openat(AT_FDCWD, "/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/proc/self/auxv", O_RDONLY) = 3
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/proc/self/stat", O_RDONLY) = 3
+openat(AT_FDCWD, "/proc/uptime", O_RDONLY) = 3
+openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 4
+openat(AT_FDCWD, "/usr/share/locale/en_US.UTF-8/LC_MESSAGES/procps-ng.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en_US.utf8/LC_MESSAGES/procps-ng.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en_US/LC_MESSAGES/procps-ng.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en.UTF-8/LC_MESSAGES/procps-ng.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en.utf8/LC_MESSAGES/procps-ng.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/procps-ng.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/proc/sys/kernel/pid_max", O_RDONLY) = 4
+openat(AT_FDCWD, "/proc/sys/kernel/osrelease", O_RDONLY) = 4
+openat(AT_FDCWD, "/proc/meminfo", O_RDONLY) = 4
+stat("/proc/self/task", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 5
+stat("/proc/1", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1/cmdline", O_RDONLY) = 6
+openat(AT_FDCWD, "/usr/lib64/gconv/gconv-modules.cache", O_RDONLY) = 6
+stat("/proc/2", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/2/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/2/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/2/cmdline", O_RDONLY) = 6
+stat("/proc/3", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/3/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3/cmdline", O_RDONLY) = 6
+stat("/proc/4", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4/cmdline", O_RDONLY) = 6
+stat("/proc/8", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/8/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/8/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/8/cmdline", O_RDONLY) = 6
+stat("/proc/9", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/9/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/9/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/9/cmdline", O_RDONLY) = 6
+stat("/proc/10", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/10/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/10/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/10/cmdline", O_RDONLY) = 6
+stat("/proc/11", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/11/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/11/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/11/cmdline", O_RDONLY) = 6
+stat("/proc/13", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/13/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13/cmdline", O_RDONLY) = 6
+stat("/proc/14", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/14/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/14/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/14/cmdline", O_RDONLY) = 6
+stat("/proc/15", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/15/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/15/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/15/cmdline", O_RDONLY) = 6
+stat("/proc/16", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/16/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16/cmdline", O_RDONLY) = 6
+stat("/proc/19", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/19/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/19/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/19/cmdline", O_RDONLY) = 6
+stat("/proc/20", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/20/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/20/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/20/cmdline", O_RDONLY) = 6
+stat("/proc/21", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21/cmdline", O_RDONLY) = 6
+stat("/proc/24", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/24/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/24/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/24/cmdline", O_RDONLY) = 6
+stat("/proc/25", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/25/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/25/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/25/cmdline", O_RDONLY) = 6
+stat("/proc/26", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/26/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/26/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/26/cmdline", O_RDONLY) = 6
+stat("/proc/29", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/29/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/29/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/29/cmdline", O_RDONLY) = 6
+stat("/proc/30", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/30/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/30/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/30/cmdline", O_RDONLY) = 6
+stat("/proc/31", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/31/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/31/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/31/cmdline", O_RDONLY) = 6
+stat("/proc/34", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/34/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/34/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/34/cmdline", O_RDONLY) = 6
+stat("/proc/35", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/35/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/35/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/35/cmdline", O_RDONLY) = 6
+stat("/proc/36", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/36/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/36/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/36/cmdline", O_RDONLY) = 6
+stat("/proc/39", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/39/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/39/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/39/cmdline", O_RDONLY) = 6
+stat("/proc/40", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/40/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/40/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/40/cmdline", O_RDONLY) = 6
+stat("/proc/41", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/41/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/41/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/41/cmdline", O_RDONLY) = 6
+stat("/proc/44", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/44/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/44/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/44/cmdline", O_RDONLY) = 6
+stat("/proc/45", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/45/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/45/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/45/cmdline", O_RDONLY) = 6
+stat("/proc/46", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/46/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/46/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/46/cmdline", O_RDONLY) = 6
+stat("/proc/49", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/49/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/49/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/49/cmdline", O_RDONLY) = 6
+stat("/proc/50", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/50/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/50/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/50/cmdline", O_RDONLY) = 6
+stat("/proc/51", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/51/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/51/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/51/cmdline", O_RDONLY) = 6
+stat("/proc/52", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/52/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/52/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/52/cmdline", O_RDONLY) = 6
+stat("/proc/53", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/53/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/53/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/53/cmdline", O_RDONLY) = 6
+stat("/proc/54", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/54/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/54/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/54/cmdline", O_RDONLY) = 6
+stat("/proc/55", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/55/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/55/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/55/cmdline", O_RDONLY) = 6
+stat("/proc/56", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/56/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/56/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/56/cmdline", O_RDONLY) = 6
+stat("/proc/57", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/57/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/57/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/57/cmdline", O_RDONLY) = 6
+stat("/proc/58", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/58/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/58/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/58/cmdline", O_RDONLY) = 6
+stat("/proc/163", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/163/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/163/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/163/cmdline", O_RDONLY) = 6
+stat("/proc/164", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/164/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/164/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/164/cmdline", O_RDONLY) = 6
+stat("/proc/166", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/166/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/166/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/166/cmdline", O_RDONLY) = 6
+stat("/proc/167", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/167/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/167/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/167/cmdline", O_RDONLY) = 6
+stat("/proc/168", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/168/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/168/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/168/cmdline", O_RDONLY) = 6
+stat("/proc/169", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/169/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/169/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/169/cmdline", O_RDONLY) = 6
+stat("/proc/170", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/170/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/170/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/170/cmdline", O_RDONLY) = 6
+stat("/proc/171", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/171/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/171/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/171/cmdline", O_RDONLY) = 6
+stat("/proc/174", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/174/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/174/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/174/cmdline", O_RDONLY) = 6
+stat("/proc/175", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/175/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/175/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/175/cmdline", O_RDONLY) = 6
+stat("/proc/179", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/179/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/179/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/179/cmdline", O_RDONLY) = 6
+stat("/proc/180", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/180/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/180/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/180/cmdline", O_RDONLY) = 6
+stat("/proc/181", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/181/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/181/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/181/cmdline", O_RDONLY) = 6
+stat("/proc/182", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/182/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/182/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/182/cmdline", O_RDONLY) = 6
+stat("/proc/183", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/183/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/183/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/183/cmdline", O_RDONLY) = 6
+stat("/proc/184", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/184/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/184/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/184/cmdline", O_RDONLY) = 6
+stat("/proc/185", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/185/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/185/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/185/cmdline", O_RDONLY) = 6
+stat("/proc/186", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/186/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/186/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/186/cmdline", O_RDONLY) = 6
+stat("/proc/187", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/187/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/187/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/187/cmdline", O_RDONLY) = 6
+stat("/proc/188", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/188/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/188/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/188/cmdline", O_RDONLY) = 6
+stat("/proc/189", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/189/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/189/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/189/cmdline", O_RDONLY) = 6
+stat("/proc/190", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/190/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/190/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/190/cmdline", O_RDONLY) = 6
+stat("/proc/191", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/191/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/191/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/191/cmdline", O_RDONLY) = 6
+stat("/proc/192", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/192/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/192/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/192/cmdline", O_RDONLY) = 6
+stat("/proc/199", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/199/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/199/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/199/cmdline", O_RDONLY) = 6
+stat("/proc/200", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/200/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/200/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/200/cmdline", O_RDONLY) = 6
+stat("/proc/208", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/208/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/208/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/208/cmdline", O_RDONLY) = 6
+stat("/proc/521", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/521/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/521/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/521/cmdline", O_RDONLY) = 6
+stat("/proc/563", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/563/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/563/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/563/cmdline", O_RDONLY) = 6
+stat("/proc/570", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/570/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/570/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/570/cmdline", O_RDONLY) = 6
+stat("/proc/589", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/589/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/589/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/589/cmdline", O_RDONLY) = 6
+stat("/proc/590", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/590/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/590/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/590/cmdline", O_RDONLY) = 6
+stat("/proc/683", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/683/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/683/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/683/cmdline", O_RDONLY) = 6
+stat("/proc/710", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/710/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/710/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/710/cmdline", O_RDONLY) = 6
+stat("/proc/904", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/904/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/904/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/904/cmdline", O_RDONLY) = 6
+stat("/proc/971", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/971/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/971/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/971/cmdline", O_RDONLY) = 6
+stat("/proc/972", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/972/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/972/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/972/cmdline", O_RDONLY) = 6
+stat("/proc/974", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/974/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/974/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/974/cmdline", O_RDONLY) = 6
+stat("/proc/975", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/975/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/975/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/975/cmdline", O_RDONLY) = 6
+stat("/proc/996", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/996/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/996/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/996/cmdline", O_RDONLY) = 6
+stat("/proc/1013", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1013/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1013/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1013/cmdline", O_RDONLY) = 6
+stat("/proc/1014", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1014/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1014/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1014/cmdline", O_RDONLY) = 6
+stat("/proc/1016", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1016/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1016/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1016/cmdline", O_RDONLY) = 6
+stat("/proc/1018", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1018/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1018/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1018/cmdline", O_RDONLY) = 6
+stat("/proc/1019", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1019/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1019/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1019/cmdline", O_RDONLY) = 6
+stat("/proc/1022", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1022/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1022/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1022/cmdline", O_RDONLY) = 6
+stat("/proc/1023", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1023/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1023/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1023/cmdline", O_RDONLY) = 6
+stat("/proc/1024", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1024/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1024/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1024/cmdline", O_RDONLY) = 6
+stat("/proc/1027", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1027/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1027/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1027/cmdline", O_RDONLY) = 6
+stat("/proc/1030", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1030/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1030/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1030/cmdline", O_RDONLY) = 6
+stat("/proc/1032", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1032/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1032/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1032/cmdline", O_RDONLY) = 6
+stat("/proc/1034", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1034/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1034/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1034/cmdline", O_RDONLY) = 6
+stat("/proc/1036", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1036/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1036/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1036/cmdline", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/tty/drivers", O_RDONLY) = 6
+stat("/dev/pts4", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/4", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x4), ...}) = 0
+stat("/proc/1043", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1043/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1043/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1043/cmdline", O_RDONLY) = 6
+stat("/dev/pts4", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/4", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x4), ...}) = 0
+stat("/proc/1048", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1048/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1048/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1048/cmdline", O_RDONLY) = 6
+stat("/dev/pts4", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/4", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x4), ...}) = 0
+stat("/proc/1056", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1056/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1056/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1056/cmdline", O_RDONLY) = 6
+stat("/proc/1057", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1057/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1057/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1057/cmdline", O_RDONLY) = 6
+stat("/proc/1067", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1067/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1067/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1067/cmdline", O_RDONLY) = 6
+stat("/proc/1074", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1074/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1074/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1074/cmdline", O_RDONLY) = 6
+stat("/proc/1101", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1101/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1101/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1101/cmdline", O_RDONLY) = 6
+stat("/proc/1115", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1115/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1115/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1115/cmdline", O_RDONLY) = 6
+stat("/proc/1120", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1120/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1120/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1120/cmdline", O_RDONLY) = 6
+stat("/proc/1121", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1121/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1121/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1121/cmdline", O_RDONLY) = 6
+stat("/proc/1122", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1122/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1122/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1122/cmdline", O_RDONLY) = 6
+stat("/proc/1123", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1123/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1123/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1123/cmdline", O_RDONLY) = 6
+stat("/proc/1137", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1137/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1137/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1137/cmdline", O_RDONLY) = 6
+stat("/proc/1139", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1139/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1139/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1139/cmdline", O_RDONLY) = 6
+stat("/proc/1166", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1166/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1166/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1166/cmdline", O_RDONLY) = 6
+stat("/proc/1167", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1167/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1167/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1167/cmdline", O_RDONLY) = 6
+stat("/proc/1169", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1169/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1169/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1169/cmdline", O_RDONLY) = 6
+stat("/proc/1184", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1184/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1184/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1184/cmdline", O_RDONLY) = 6
+stat("/proc/1185", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1185/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1185/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1185/cmdline", O_RDONLY) = 6
+stat("/proc/1643", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1643/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1643/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1643/cmdline", O_RDONLY) = 6
+stat("/proc/1649", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1649/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1649/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1649/cmdline", O_RDONLY) = 6
+stat("/proc/1651", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1651/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1651/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1651/cmdline", O_RDONLY) = 6
+stat("/proc/1652", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1652/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1652/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1652/cmdline", O_RDONLY) = 6
+stat("/proc/1653", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1653/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1653/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1653/cmdline", O_RDONLY) = 6
+stat("/proc/1989", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1989/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1989/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1989/cmdline", O_RDONLY) = 6
+stat("/proc/1990", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/1990/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1990/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/1990/cmdline", O_RDONLY) = 6
+stat("/proc/2803", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/2803/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/2803/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/2803/cmdline", O_RDONLY) = 6
+stat("/proc/2850", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/2850/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/2850/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/2850/cmdline", O_RDONLY) = 6
+stat("/proc/3101", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/3101/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3101/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3101/cmdline", O_RDONLY) = 6
+stat("/dev/pts3", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/3", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x3), ...}) = 0
+stat("/proc/3108", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/3108/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3108/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3108/cmdline", O_RDONLY) = 6
+stat("/dev/pts3", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/3", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x3), ...}) = 0
+stat("/proc/3113", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/3113/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3113/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3113/cmdline", O_RDONLY) = 6
+stat("/dev/pts3", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/3", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x3), ...}) = 0
+stat("/proc/3262", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/3262/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3262/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3262/cmdline", O_RDONLY) = 6
+stat("/proc/3685", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/3685/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3685/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3685/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/3812", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/3812/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3812/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/3812/cmdline", O_RDONLY) = 6
+stat("/proc/4703", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4703/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4703/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4703/cmdline", O_RDONLY) = 6
+stat("/proc/4710", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4710/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4710/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4710/cmdline", O_RDONLY) = 6
+stat("/proc/4718", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4718/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4718/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4718/cmdline", O_RDONLY) = 6
+stat("/proc/4723", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4723/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4723/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4723/cmdline", O_RDONLY) = 6
+stat("/proc/4735", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4735/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4735/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4735/cmdline", O_RDONLY) = 6
+stat("/proc/4737", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4737/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4737/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4737/cmdline", O_RDONLY) = 6
+stat("/proc/4740", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4740/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4740/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4740/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/4743", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4743/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4743/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4743/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/4808", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4808/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4808/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4808/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/4872", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4872/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4872/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4872/cmdline", O_RDONLY) = 6
+stat("/proc/4879", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4879/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4879/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4879/cmdline", O_RDONLY) = 6
+stat("/proc/4925", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4925/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4925/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4925/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/4974", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4974/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4974/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4974/cmdline", O_RDONLY) = 6
+stat("/proc/4981", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4981/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4981/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4981/cmdline", O_RDONLY) = 6
+stat("/proc/4983", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4983/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4983/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4983/cmdline", O_RDONLY) = 6
+stat("/proc/4993", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/4993/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4993/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/4993/cmdline", O_RDONLY) = 6
+stat("/proc/5011", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5011/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5011/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5011/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5015", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5015/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5015/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5015/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5016", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5016/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5016/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5016/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5018", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5018/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5018/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5018/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5021", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5021/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5021/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5021/cmdline", O_RDONLY) = 6
+stat("/proc/5045", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5045/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5045/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5045/cmdline", O_RDONLY) = 6
+stat("/proc/5049", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5049/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5049/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5049/cmdline", O_RDONLY) = 6
+stat("/proc/5053", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5053/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5053/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5053/cmdline", O_RDONLY) = 6
+stat("/proc/5061", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5061/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5061/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5061/cmdline", O_RDONLY) = 6
+stat("/proc/5065", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5065/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5065/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5065/cmdline", O_RDONLY) = 6
+stat("/proc/5072", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5072/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5072/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5072/cmdline", O_RDONLY) = 6
+stat("/proc/5078", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5078/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5078/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5078/cmdline", O_RDONLY) = 6
+stat("/proc/5086", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5086/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5086/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5086/cmdline", O_RDONLY) = 6
+stat("/proc/5088", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5088/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5088/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5088/cmdline", O_RDONLY) = 6
+stat("/proc/5096", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5096/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5096/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5096/cmdline", O_RDONLY) = 6
+stat("/proc/5097", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5097/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5097/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5097/cmdline", O_RDONLY) = 6
+stat("/proc/5101", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5101/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5101/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5101/cmdline", O_RDONLY) = 6
+stat("/proc/5108", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5108/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5108/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5108/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5110", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5110/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5110/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5110/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5111", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5111/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5111/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5111/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5112", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5112/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5112/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5112/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5113", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5113/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5113/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5113/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5117", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5117/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5117/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5117/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5122", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5122/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5122/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5122/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5127", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5127/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5127/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5127/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5135", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5135/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5135/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5135/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5136", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5136/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5136/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5136/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5137", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5137/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5137/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5137/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5139", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5139/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5139/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5139/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5142", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5142/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5142/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5142/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5145", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5145/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5145/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5145/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5149", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5149/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5149/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5149/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5155", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5155/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5155/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5155/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5163", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5163/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5163/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5163/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5228", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5228/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5228/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5228/cmdline", O_RDONLY) = 6
+stat("/proc/5254", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5254/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5254/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5254/cmdline", O_RDONLY) = 6
+stat("/proc/5288", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5288/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5288/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5288/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5307", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5307/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5307/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5307/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5353", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5353/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5353/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5353/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5356", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5356/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5356/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5356/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5357", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5357/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5357/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5357/cmdline", O_RDONLY) = 6
+stat("/proc/5359", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5359/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5359/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5359/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5364", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5364/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5364/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5364/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5403", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5403/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5403/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5403/cmdline", O_RDONLY) = 6
+stat("/proc/5419", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5419/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5419/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5419/cmdline", O_RDONLY) = 6
+stat("/proc/5739", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5739/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5739/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5739/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5775", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5775/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5775/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5775/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5788", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5788/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5788/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5788/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/5886", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/5886/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5886/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/5886/cmdline", O_RDONLY) = 6
+stat("/proc/6308", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/6308/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/6308/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/6308/cmdline", O_RDONLY) = 6
+stat("/proc/6316", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/6316/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/6316/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/6316/cmdline", O_RDONLY) = 6
+stat("/proc/6333", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/6333/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/6333/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/6333/cmdline", O_RDONLY) = 6
+stat("/proc/7322", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/7322/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7322/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7322/cmdline", O_RDONLY) = 6
+stat("/proc/7323", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/7323/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7323/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7323/cmdline", O_RDONLY) = 6
+stat("/proc/7427", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/7427/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7427/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7427/cmdline", O_RDONLY) = 6
+stat("/proc/7529", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/7529/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7529/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7529/cmdline", O_RDONLY) = 6
+stat("/proc/7622", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/7622/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7622/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7622/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/7625", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/7625/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7625/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7625/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/7628", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/7628/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7628/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7628/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/7631", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/7631/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7631/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7631/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/7637", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/7637/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7637/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/7637/cmdline", O_RDONLY) = 6
+stat("/proc/9471", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/9471/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/9471/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/9471/cmdline", O_RDONLY) = 6
+stat("/proc/9473", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/9473/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/9473/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/9473/cmdline", O_RDONLY) = 6
+stat("/dev/pts1", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/1", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}) = 0
+stat("/proc/9580", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/9580/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/9580/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/9580/cmdline", O_RDONLY) = 6
+stat("/dev/pts2", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x2), ...}) = 0
+stat("/proc/9716", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/9716/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/9716/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/9716/cmdline", O_RDONLY) = 6
+stat("/dev/pts1", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/1", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}) = 0
+stat("/proc/11436", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/11436/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/11436/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/11436/cmdline", O_RDONLY) = 6
+stat("/proc/13547", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/13547/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13547/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13547/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/13562", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/13562/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13562/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13562/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/13564", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/13564/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13564/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13564/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/13584", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/13584/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13584/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13584/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/13589", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/13589/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13589/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13589/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/13678", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/13678/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13678/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13678/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/13837", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/13837/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13837/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13837/cmdline", O_RDONLY) = 6
+stat("/proc/13864", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/13864/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13864/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/13864/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/15468", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/15468/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/15468/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/15468/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/15588", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/15588/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/15588/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/15588/cmdline", O_RDONLY) = 6
+stat("/dev/pts6", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/6", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x6), ...}) = 0
+stat("/proc/16113", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/16113/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16113/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16113/cmdline", O_RDONLY) = 6
+stat("/proc/16120", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/16120/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16120/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16120/cmdline", O_RDONLY) = 6
+stat("/dev/pts0", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/0", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+stat("/proc/16155", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/16155/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16155/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16155/cmdline", O_RDONLY) = 6
+stat("/proc/16186", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/16186/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16186/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16186/cmdline", O_RDONLY) = 6
+stat("/dev/pts0", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/0", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+stat("/proc/16227", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/16227/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16227/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16227/cmdline", O_RDONLY) = 6
+stat("/proc/16772", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/16772/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16772/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16772/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/16869", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/16869/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16869/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16869/cmdline", O_RDONLY) = 6
+stat("/proc/16972", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/16972/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16972/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/16972/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/17019", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/17019/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/17019/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/17019/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/17321", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/17321/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/17321/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/17321/cmdline", O_RDONLY) = 6
+stat("/proc/17688", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/17688/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/17688/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/17688/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/17691", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/17691/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/17691/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/17691/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/17719", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/17719/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/17719/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/17719/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/17942", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/17942/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/17942/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/17942/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/18544", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/18544/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/18544/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/18544/cmdline", O_RDONLY) = 6
+stat("/proc/19082", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/19082/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/19082/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/19082/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/19120", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/19120/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/19120/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/19120/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/19192", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/19192/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/19192/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/19192/cmdline", O_RDONLY) = 6
+stat("/proc/19283", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/19283/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/19283/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/19283/cmdline", O_RDONLY) = 6
+stat("/proc/19371", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/19371/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/19371/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/19371/cmdline", O_RDONLY) = 6
+stat("/proc/20599", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/20599/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/20599/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/20599/cmdline", O_RDONLY) = 6
+stat("/proc/20600", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/20600/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/20600/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/20600/cmdline", O_RDONLY) = 6
+stat("/proc/20602", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/20602/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/20602/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/20602/cmdline", O_RDONLY) = 6
+stat("/proc/20655", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/20655/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/20655/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/20655/cmdline", O_RDONLY) = 6
+stat("/proc/20725", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/20725/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/20725/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/20725/cmdline", O_RDONLY) = 6
+stat("/proc/21270", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21270/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21270/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21270/cmdline", O_RDONLY) = 6
+stat("/dev/pts3", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/3", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x3), ...}) = 0
+stat("/proc/21383", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21383/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21383/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21383/cmdline", O_RDONLY) = 6
+stat("/proc/21384", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21384/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21384/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21384/cmdline", O_RDONLY) = 6
+stat("/proc/21385", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21385/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21385/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21385/cmdline", O_RDONLY) = 6
+stat("/proc/21524", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21524/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21524/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21524/cmdline", O_RDONLY) = 6
+stat("/proc/21550", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21550/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21550/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21550/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/21639", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21639/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21639/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21639/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/21684", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21684/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21684/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21684/cmdline", O_RDONLY) = 6
+stat("/proc/21708", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21708/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21708/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21708/cmdline", O_RDONLY) = 6
+stat("/proc/21713", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21713/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21713/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21713/cmdline", O_RDONLY) = 6
+stat("/proc/21717", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21717/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21717/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21717/cmdline", O_RDONLY) = 6
+stat("/proc/21725", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21725/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21725/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21725/cmdline", O_RDONLY) = 6
+stat("/proc/21727", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21727/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21727/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21727/cmdline", O_RDONLY) = 6
+stat("/proc/21732", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21732/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21732/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21732/cmdline", O_RDONLY) = 6
+stat("/proc/21733", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21733/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21733/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21733/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/21775", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21775/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21775/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21775/cmdline", O_RDONLY) = 6
+stat("/proc/21781", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21781/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21781/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21781/cmdline", O_RDONLY) = 6
+stat("/proc/21783", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21783/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21783/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21783/cmdline", O_RDONLY) = 6
+stat("/proc/21784", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21784/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21784/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21784/cmdline", O_RDONLY) = 6
+stat("/proc/21789", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21789/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21789/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21789/cmdline", O_RDONLY) = 6
+stat("/proc/21793", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21793/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21793/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21793/cmdline", O_RDONLY) = 6
+stat("/proc/21794", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21794/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21794/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21794/cmdline", O_RDONLY) = 6
+stat("/proc/21802", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21802/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21802/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21802/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/21817", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21817/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21817/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21817/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/21853", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21853/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21853/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21853/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/21867", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21867/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21867/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21867/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/21904", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21904/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21904/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21904/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/21948", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21948/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21948/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21948/cmdline", O_RDONLY) = 6
+stat("/proc/21953", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/21953/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21953/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/21953/cmdline", O_RDONLY) = 6
+stat("/proc/22000", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22000/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22000/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22000/cmdline", O_RDONLY) = 6
+stat("/proc/22030", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22030/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22030/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22030/cmdline", O_RDONLY) = 6
+stat("/proc/22035", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22035/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22035/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22035/cmdline", O_RDONLY) = 6
+stat("/proc/22083", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22083/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22083/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22083/cmdline", O_RDONLY) = 6
+stat("/proc/22206", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22206/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22206/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22206/cmdline", O_RDONLY) = 6
+stat("/proc/22210", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22210/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22210/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22210/cmdline", O_RDONLY) = 6
+stat("/proc/22211", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22211/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22211/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22211/cmdline", O_RDONLY) = 6
+stat("/proc/22234", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22234/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22234/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22234/cmdline", O_RDONLY) = 6
+stat("/proc/22242", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22242/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22242/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22242/cmdline", O_RDONLY) = 6
+stat("/dev/pts4", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/4", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x4), ...}) = 0
+stat("/proc/22243", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22243/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22243/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22243/cmdline", O_RDONLY) = 6
+stat("/proc/22295", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22295/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22295/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22295/cmdline", O_RDONLY) = 6
+stat("/proc/22306", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22306/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22306/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22306/cmdline", O_RDONLY) = 6
+stat("/proc/22307", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22307/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22307/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22307/cmdline", O_RDONLY) = 6
+stat("/proc/22310", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22310/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22310/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22310/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/22376", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22376/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22376/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22376/cmdline", O_RDONLY) = 6
+stat("/proc/22377", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22377/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22377/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22377/cmdline", O_RDONLY) = 6
+stat("/proc/22386", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22386/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22386/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22386/cmdline", O_RDONLY) = 6
+stat("/dev/pts8", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/8", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x8), ...}) = 0
+stat("/proc/22407", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22407/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22407/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22407/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/22529", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22529/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22529/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22529/cmdline", O_RDONLY) = 6
+stat("/dev/pts8", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/8", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x8), ...}) = 0
+stat("/proc/22532", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/22532/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22532/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/22532/cmdline", O_RDONLY) = 6
+stat("/dev/pts8", 0x7fffcc18d7a0)       = -1 ENOENT (No such file or directory)
+stat("/dev/pts/8", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x8), ...}) = 0
+stat("/proc/25186", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/25186/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/25186/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/25186/cmdline", O_RDONLY) = 6
+stat("/dev/tty2", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x4, 0x2), ...}) = 0
+stat("/proc/28922", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/28922/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/28922/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/28922/cmdline", O_RDONLY) = 6
+stat("/proc/31528", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/31528/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/31528/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/31528/cmdline", O_RDONLY) = 6
+stat("/proc/31533", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/31533/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/31533/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/31533/cmdline", O_RDONLY) = 6
+stat("/proc/32308", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/32308/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/32308/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/32308/cmdline", O_RDONLY) = 6
+stat("/proc/32324", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+openat(AT_FDCWD, "/proc/32324/stat", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/32324/status", O_RDONLY) = 6
+openat(AT_FDCWD, "/proc/32324/cmdline", O_RDONLY) = 6
++++ exited with 0 +++

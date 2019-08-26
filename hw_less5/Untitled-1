@@ -1,0 +1,9 @@
+[dubinskiy.a@linmore 4740]$ cat status 
+Name:   gdm-wayland-ses                
+Umask:  0077                           
+State:  S (sleeping)                   
+Tgid:   4740                           
+Ngid:   0                              
+Pid:    4740
+
+http://www.maizure.org/projects/decoded-top-procps/index.html
