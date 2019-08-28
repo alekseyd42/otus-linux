@@ -1,31 +1,19 @@
-#!/bin/bash
-#file='/proc/22407/stat'
-#a=$(awk '{print $14}' $file)
-#b=$(awk '{print $15}' $file)
-#d=$(awk '{print $16}' $file)
-#e=$(awk '{print $17}' $file)
-#echo $a' :'$b' :'$d' :'$e     
-#let "c=(a+b+e+d)/100"
-#echo $c
-#let "sec=c%60"
-#let "min=c/60%60"
-#let "hrs=c/3600"
-#printf -v ts '%d:%02d:%02d' $hrs $min $sec
-#echo $ts
-pid='21550'
-function gt_time () {
-file='/proc/'$1'/stat'
-a=$(awk '{print $14}' $file)
-b=$(awk '{print $15}' $file)
-c=$(awk '{print $16}' $file)
-d=$(awk '{print $17}' $file)
-let "milsec=(a+b+c+d)"        
-let                
-let             
-let    
-#printf -v rez '%02d:%02d' $hrs $min 
-#echo $rez
-echo $sec  $min $hrs
-}
-tm=$(gt_time $pid)
-echo $tm
+#!/usr/bin/env bash
+lspid=$(ls /proc | awk /[0-9]/|sort -n)
+for pid in ${lspid[@]}
+    do
+        if [ -d /proc/$pid ];then 
+        st=$(awk '{print $3}' /proc/$pid/stat)
+        stt=$(awk '{print $19}' /proc/$pid/stat)
+            if [ "$stt" -lt 0 ]
+            then
+             stt="<"
+                elif [ "$stt" -gt 0 ]    
+                  then stt="N"
+                elif [ "$stt" == 0 ]
+                  then stt=''
+            fi       
+        printf '%b\n' $pidd' '$st$stt' '$nm
+        fi
+    done
+# awk -F"[][()]" '{print $3 }' /proc/18931/stat |awk '{print $1}'
