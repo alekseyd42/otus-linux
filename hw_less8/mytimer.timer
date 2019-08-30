@@ -1,0 +1,8 @@
+[Unit]
+Description=Runs unit.sh every 30 seconds
+[Timer]
+OnBootSec=30sec
+OnUnitActiveSec=30sec
+Unit=mytimer.service
+[Install]
+WantedBy=multi-user.target
