@@ -2,4 +2,5 @@
 Description=Runs unit.sh every 30 seconds
 [Service]
 Type=oneshot
-ExecStart=/opt/unit.sh
+EnvironmentFile=/etc/sysconfig/mytimer
+ExecStart=/opt/unit.sh -s $STRING -f $FILE

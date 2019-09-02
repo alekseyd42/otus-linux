@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
+lockfile=/tmp/lockfile 
+if ( set -o noclobber; echo "$$" > "$lockfile") 2> /dev/null; 
+then trap 'rm -f "$lockfile"; exit $?' INT TERM EXIT KILL  
+while true  
+do 
+###################
+###################
 set -e
+#VARS
+fln=''
+lln=''
+s='' #строка для поиска
+f='' #файл для парсинга
+flnfl='/opt/fln'
 ##Проверяем наличие параметров переданных скрипту
 ##Functions
 #Хэлп.как использовать скрипт
@@ -25,6 +38,25 @@ while getopts ":s:f:" opt;
             ;;
         esac
     done
-if [[ ! -f /opt/fln ]]; then touch /opt/fln && echo '1'>/opt/fln;
-else echo 1
+#Находим номер строки , с которой парсим лог, если файла со строкой не(наример первый запуск скрипта, то создаем его)
+if [[ ! -f $flnfl ]]; then touch $flnfl && echo '1'>$flnfl;
+	else read fln < $flnfl
  fi 
+#Берем номер последней строки в файле
+lln=$(awk 'END {print NR}' $f )
+#запишем последнюю обработанную строку в файл со первой строкой
+#echo $lln > $flnfl
+#т.к. файл статичный делаю заглушку
+echo 100 > $flnfl
+cnt=$(awk 'NR>='$fln' && NR<='$lln''  $f | awk /$s/|wc|awk '{print $1}')
+printf '%b' "NASHEL $cnt RAZ"
+
+###############################33
+################################
+exit;
+done  
+rm -f "$lockfile"  
+trap - INT TERM EXIT KILL 
+else  
+echo "Hold by $(cat $lockfile)"  
+fi 
