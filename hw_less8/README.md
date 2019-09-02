@@ -1,20 +1,20 @@
 # Домашняя работа 8
 
 ### 1. Написать сервис, который будет раз в 30 секунд мониторить лог на предмет наличия ключевого слова. Файл и слово должны задаваться в /etc/sysconfig
-    
-    Скрипт [unit.sh](unit.sh) 
 
-    Сервис для systemd [mytimer.service](mytimer.service)
+Скрипт который будет запускать systemd [unit.sh](unit.sh) 
 
-    Таймер для systemd [mytimer.timer](mytimer.timer)
+Сервис для systemd [mytimer.service](mytimer.service)
 
-    лог файл для поиска [messages](messages)
+Таймер для systemd  [mytimer.timer](mytimer.timer)
 
-    скрипт для настройки всег хозяйста в Vagrant [Task1.sh](task1.sh)
+лог файл для поиска  [messages](messages)
 
-    Запускаю вм Vagrant 
+скрипт для настройки всег хозяйста в Vagrant  [Task1.sh](task1.sh)
 
-    под рутом запускаю скрипт task1.sh
+Запускаю вм Vagrant 
+
+под рутом запускаю скрипт task1.sh
 
 ### 2. Из epel установить spawn-fcgi и переписать init-скрипт на unit-файл. Имя сервиса должно так же называться.
 
