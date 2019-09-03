@@ -1,0 +1,10 @@
+[Unit]
+Description=Jira tets Unit
+After=network.target remote-fs.target nss-lookup.target
+[Service]
+Type=forking
+EnvironmentFile=/etc/sysconfig/jira
+ExecStart=/usr/bin/sh $START
+ExecStop=/usr/bin/sh $STOP
+[Install]
+WantedBy=multi-user.target

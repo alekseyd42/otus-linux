@@ -1,0 +1,2 @@
+START="/opt/atlassian/bin/catalina.sh start"
+STOP="/opt/atlassian/bin/catalina.sh stop"
