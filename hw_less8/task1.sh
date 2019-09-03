@@ -13,4 +13,6 @@ systemctl enable --now mytimer.timer
 sleep 30
 systemctl status mytimer.timer
 systemctl status mytimer.service
+sleep 5 
+systemctl status mytimer.service
 

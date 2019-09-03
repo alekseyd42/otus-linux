@@ -1,0 +1,8 @@
+[Unit]                                                              
+Description=Spawn FastCGI scripts to be used by web servers         
+After=local-fs.target network.target syslog.target remote-fs.target 
+                                                                    
+[Service]                                                           
+                                                                    
+[Install]                                                           
+WantedBy=multi-user.target                                          
