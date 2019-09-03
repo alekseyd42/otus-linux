@@ -99,9 +99,3 @@ Sep 02 12:07:44 otuslinux systemd[1]: Stopped Spawn FastCGI scripts to be used b
 из /vagrant/ из под рута выполняем task3.sh
 [task3.sh](task3.sh)
 
-
-### 4*. Скачать демо-версию Atlassian Jira и переписать основной скрипт запуска на unit-файл
-Задание необходимо сделать с использованием Vagrantfile и proviosioner shell (или ansible, на Ваше усмотрение)
-
-
- 
