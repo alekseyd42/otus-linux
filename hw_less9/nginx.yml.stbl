@@ -1,0 +1,55 @@
+---
+  - name: Install nginx 
+    hosts: web
+    become: true
+    vars:
+     nginx_listen_port: 8080
+
+    tasks:
+    - block: #RH
+      - name: Install EPEL Repo 
+        yum: 
+         name: epel-release
+         state: present
+        tags:
+         - epel-package
+         - packages
+      - name: Install nginx 
+        yum:
+         name: nginx
+         state: latest
+        notify:
+          - restart nginx
+        tags:
+          - nginx-package
+          - packages 
+      - name: NGINX | Create nginx.conf
+        template:
+         src: templates/nginx.conf.j2
+         dest: /tmp/nginx.conf
+        notify:
+          - reload nginx
+        tags: nginx configuration 
+      when: ansible_os_family == "RedHat"
+    - block: #debian
+      - name: Install nginx
+        apt:
+         name: nginx
+         state: latest
+        notify:
+          - restart nginx
+        tags:
+          - nginx-package
+          - packages
+      
+      when: ansible_os_family == "Debian"
+    handlers:
+      - name: restart nginx
+        systemd:
+         name: nginx
+         state: restart
+         enabled: yes
+      - name: reload nginx
+        systemd:
+         name: nginx
+         state: reloaded

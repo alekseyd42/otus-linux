@@ -1,0 +1,3 @@
+[web]
+centos ansible_host=127.0.0.1 ansible_port=2222  ansible_private_key_file=.vagrant/machines/centos/virtualbox/private_key
+debian ansible_host=127.0.0.1 ansible_port=2200  ansible_private_key_file=.vagrant/machines/debian/virtualbox/private_key
