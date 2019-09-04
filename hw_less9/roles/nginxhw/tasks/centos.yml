@@ -1,0 +1,11 @@
+---
+  - name: Install EPEL repo
+    yum:
+      name: epel-release
+      state: present
+  - name: Install NGINX
+    yum:
+      name: nginx
+      state: latest
+    notify: restart nginx
+

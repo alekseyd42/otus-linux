@@ -1,0 +1,7 @@
+---
+- name: Install nginx
+  hosts: web
+  become: yes
+
+  roles:
+    - nginxhw
