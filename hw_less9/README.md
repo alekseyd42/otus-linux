@@ -24,5 +24,7 @@
 
  ansible-playbook playbooks/inst_ngnx.yml
 
-
+в каталоге playbooks две плёбуки:
+- одной playbook [nginx.yml](playbooks/nginx.yml)
+- с ролями [inst_ngnx.yml](playbooks/inst_ngnx.yml)
 
