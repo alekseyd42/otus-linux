@@ -1,0 +1,7 @@
+---
+- name: HW task 1
+  hosts: centos
+  become: yes
+
+  roles:
+    - task1

@@ -1,0 +1,6 @@
+---
+# handlers file for roles/task1
+- name: restart sshd
+  systemd:
+     name: sshd
+     state: restarted

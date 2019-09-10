@@ -1,0 +1,24 @@
+---
+- name: configure time.conf
+  lineinfile:
+       path: /etc/security/time.conf
+       state: present
+       line: "{{ item }}"
+  with_items:
+       - "*;*;night;!Al0800-2000"
+       - "*;*;day;Al0800-2000"
+       - "*;*;friday;Fr0000-2400"
+      
+- name: Configure pamd modules for ssh
+  pamd:
+    name: sshd
+    type: auth
+    control: include
+    module_path: postlogin
+    new_type: account
+    new_control: required
+    new_module_path: "{{ item }}"
+    state: after
+  with_items:
+      - pam_nologin.so
+      - pam_time.so

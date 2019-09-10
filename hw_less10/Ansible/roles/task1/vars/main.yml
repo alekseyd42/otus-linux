@@ -1,0 +1,4 @@
+---
+# vars file for roles/task1
+#python -c 'import crypt; print crypt.crypt("This is my Password", "Otus2019")'
+password: $6$U2oPmAOtHhgvef9Q$/y/CJwqhoNlR0ZRmsMzTq8YG6m8E8KRRkSRJ/ouvcdFTQ0qKkpfLmz9TvSo/u4fODLtMUO.Yn8B67eg0McYzt.

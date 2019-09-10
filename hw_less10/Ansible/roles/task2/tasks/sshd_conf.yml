@@ -1,0 +1,8 @@
+---
+- name: Editing /etc/ssh/sshd_config
+  lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: '^PasswordAuthentication no'
+        insertafter: BOF
+        line: 'PasswordAuthentication yes'
+  notify: restart sshd

@@ -1,0 +1,14 @@
+---
+- name: "Add users name: day,night,friday with password 'Otus2019'"
+  user:
+    name: "{{ item }}"
+    password: "{{ password }}"
+    state: present
+  with_items:
+      - day
+      - night
+      - friday
+- name: Config sshd
+  shell: sed -i 's/^PasswordAuthentication.*$/PasswordAuthentication yes/' /etc/ssh/sshd_config
+  notify: restart sshd
+

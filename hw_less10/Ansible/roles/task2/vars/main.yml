@@ -1,0 +1,4 @@
+---
+# vars file for roles/task2
+username: test
+password: $6$Nuo5kLUMlK1/Ha.7$xYJHIU3ErnojL9UZ7Pqm6zfVuUjxV1se8rRiDJeWNlR2vxX3fBTdA4oF21e4LfhHqqI.Ci8Z5FCSarkKiQx8e.

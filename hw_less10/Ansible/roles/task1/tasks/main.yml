@@ -1,0 +1,4 @@
+---
+# tasks file for roles/task1
+- include: adduser.yml
+- include: pam.yml

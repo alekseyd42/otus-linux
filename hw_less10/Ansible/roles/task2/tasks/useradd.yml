@@ -1,0 +1,7 @@
+---
+- name: Add user name test with password Test123
+  user:
+    name: "{{ username }}"
+    groups: wheel
+    password: "{{ password }}"
+    state: present
