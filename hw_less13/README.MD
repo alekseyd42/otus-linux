@@ -17,4 +17,4 @@
 
 Скрин с рабочего забикса, быстро набросал отдельный screen для трех серверов, на первом граффике проц(system.cpu.util[,system,avg1]) + память(vm.memory.size[pused]), на втором диски(скопировал из Doscovery Lan стд.шаблона для Windows), на третьем net.if.in/net.if.out.
 
-![][zabbix.png]
+[скрин экрана](zabbix.png)
