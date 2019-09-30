@@ -1,0 +1,10 @@
+---
+# tasks file for roles/inst_borg
+#Install needet packages
+
+- include: install.yml 
+#create user for borg & configure ssh-keys
+- include: cfg_usr_ssh.yml
+#backup
+- include: borg_tsks.yml
+  

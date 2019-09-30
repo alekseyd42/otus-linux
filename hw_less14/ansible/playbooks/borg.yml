@@ -1,0 +1,6 @@
+---
+- name: Install and configure BORG
+  hosts: backup
+  become: yes
+  roles:
+    - inst_borg

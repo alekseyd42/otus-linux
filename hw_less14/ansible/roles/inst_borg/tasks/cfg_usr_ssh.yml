@@ -1,0 +1,48 @@
+---
+- name: adduser
+  user:
+    name: borg
+    password: "{{ password }}"
+    state: present
+  when: ansible_hostname == "server"
+
+- name: create .ssh directory
+  file:
+   path: /home/borg/.ssh
+   state: directory
+   owner: borg
+   group: borg
+   mode: '755'
+  when: ansible_hostname == "server"
+
+- name: copy ssh-key files to server
+  copy:
+   src: ./files/keys/borg.pub
+   dest: /home/borg/.ssh/authorized_keys
+   group: borg
+   owner: borg
+   mode: '755'
+  when: ansible_hostname == "server"
+
+- name: copy ssh-key files to client
+  copy:
+   src: ./files/keys/borg
+   dest: /root/.ssh/id_rsa
+   group: root
+   owner: root
+   mode: '600'
+  when: ansible_hostname == "client"
+
+- name: copy ssh-key.pub files to client
+  copy:
+   src: ./files/keys/borg.pub
+   dest: /root/.ssh/id_rsa.pub
+   group: root
+   owner: root
+   mode: '755'
+  when: ansible_hostname == "client"
+
+- name: update known_hosts
+  shell: ssh-keyscan -H server >> /etc/ssh/ssh_known_hosts
+  when: ansible_hostname == "client"
+

@@ -1,0 +1,11 @@
+---
+- name: Initial borg reposetory
+  shell: borg init -e none borg@server:myrepo1
+  when: ansible_hostname == "client"
+- name: add cron jobs for Borg
+  cron:
+    name: backup every 15 minut
+    minute: '*/5'
+    job: 'borg create --stats --list borg@server:myrepo1::"etc-$(date)" /etc'
+  when: ansible_hostname == "client"
+  
