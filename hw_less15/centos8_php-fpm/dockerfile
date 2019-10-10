@@ -1,0 +1,4 @@
+FROM centos:latest
+RUN dnf update -y && dnf install php-fpm -y && dnf clean all && mkdir /site && mkdir /run/php-fpm
+COPY www.conf /etc/php-fpm.d/www.conf
+CMD [ "php-fpm" , "-F" ]
