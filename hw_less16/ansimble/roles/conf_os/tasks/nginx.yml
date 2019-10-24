@@ -1,0 +1,47 @@
+---
+- name: install nginx 
+  yum:
+   name: nginx
+   state: latest
+
+- name: enabled nginx
+  systemd:
+   name: nginx
+   enabled: yes
+   state: started
+
+- name: filebeat config copy
+  copy:
+   src: filebeat.yml
+   dest: /etc/filebeat/filebeat.yml
+  notify: filebeat-en-ls
+
+- name: start filebeat
+  systemd:
+   name: filebeat
+   enabled: yes
+   state: started
+
+- name: install auditbeat
+  yum:
+   name: auditbeat
+   state: present
+  notify: stop-auditd
+
+- name: disable Auditd
+  systemd:
+    name: auditd
+    enabled: no
+
+- name: config auditbeat
+  copy:
+    src: auditbeat.yml
+    dest: /etc/auditbeat/auditbeat.yml
+
+- name: enable auditbeat
+  systemd:
+    name: auditbeat
+    enabled: yes
+    state: started
+  notify: restart-auditbeat
+  

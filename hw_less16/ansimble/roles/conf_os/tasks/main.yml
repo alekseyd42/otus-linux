@@ -1,0 +1,11 @@
+---
+# tasks file for roles/conf_os
+- include: rsyslog.yml
+  when: "'logsrv' in {{ group_names }}"
+- include: update.yml
+- include: elk.yml
+  when: "'elksrv' in {{ group_names }}"
+- include: nginx.yml
+  when: "'websrv' in {{ group_names }}"
+- include: docker.yml
+  when: "'docsrv' in {{ group_names }}"

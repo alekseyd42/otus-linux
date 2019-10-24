@@ -1,0 +1,13 @@
+[websrv]
+web0  ansible_host=192.168.11.101 ansible_ssh_private_key_file=.vagrant/machines/web0/virtualbox/private_key
+[elksrv]
+log0  ansible_host=192.168.11.102 ansible_ssh_private_key_file=.vagrant/machines/log0/virtualbox/private_key
+[logsrv]
+log1  ansible_host=192.168.11.104 ansible_ssh_private_key_file=.vagrant/machines/log1/virtualbox/private_key
+[docsrv]
+doc0 ansible_host=192.168.11.103 ansible_ssh_private_key_file=.vagrant/machines/doc0/virtualbox/private_key
+[all:children]
+websrv
+logsrv
+elksrv
+docsrv

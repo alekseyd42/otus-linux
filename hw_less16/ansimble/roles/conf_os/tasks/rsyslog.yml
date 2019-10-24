@@ -1,0 +1,13 @@
+---
+- name: install rsyslog
+  yum:
+    name: rsyslog
+    state: present
+- name: config rsyslog server
+  copy:
+   src: log1/rsyslog.conf
+   dest: /etc/rsyslog.conf 
+  notify:
+      - firewall-rsyslog-tcp
+      - firewall-rsyslog-udp
+      - enabled-rsyslog

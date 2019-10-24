@@ -1,0 +1,35 @@
+---
+- name: Install ELK Stack
+  yum:
+    name:
+      - java-1.8.0-openjdk
+      - java-1.8.0-openjdk-devel
+      - elasticsearch
+      - logstash
+      - kibana
+    state: present
+- name: Copy Elasticsearch.yml
+  copy:
+   src: files/elasticsearch.yml
+   dest: /etc/elasticsearch/elasticsearch.yml
+- name: Copy Kibana config
+  copy:
+    src: files/kibana.yml
+    dest: /etc/kibana/kibana.yml
+- name: Copy Logstash configs
+  copy:
+    src: "{{ item }}"
+    dest: /etc/logstash/conf.d/{{ item }}
+  with_items:
+  - filter.conf
+  - input.conf
+  - output.conf
+- name: Start ELK Services
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    state: started 
+  with_items:
+  - elasticsearch
+  - kibana
+  - logstash

@@ -1,0 +1,75 @@
+- name: Install docker
+  yum:
+    name:
+      - rsyslog
+      - docker
+      - python-docker-py
+    state: latest
+
+- name: Enable docker
+  systemd:
+   name: docker
+   enabled: yes
+   state: started
+
+- name: Pul nginx image
+  docker_image:
+    name: nginx
+    source: pull
+
+- name: Create logfiles dir for container
+  file:
+    path: /var/log/docker/nginx0
+    state: directory
+
+- name: Start nginx container
+  docker_container:
+    name: Nginx0
+    image: nginx
+    state: started
+    restart: yes
+    ports: 80:80 
+    volumes: /var/log/docker/nginx0:/var/log/nginx:Z
+
+- name: Config filebeat
+  copy:
+    src: doc0/filebeat.yml
+    dest: /etc/filebeat/filebeat.yml
+
+- name: Enable filebeat
+  systemd:
+    name: filebeat
+    enabled: yes
+    state: started
+
+- name: config rsyslog
+  copy:
+    src: doc0/audit.conf
+    dest: /etc/rsyslog.d/audit.conf
+
+- name: config rsyslog semodules
+  copy:
+    src: doc0/{{ item }}
+    dest: /tmp/{{ item }}
+  with_items:
+    - rsyslog0.pp
+    - rsyslog1.pp
+    - rsyslog2.pp
+
+- name: import semodules for rsyslog
+  command: semodule -i /tmp/{{ item }}
+  with_items:
+    - rsyslog0.pp
+    - rsyslog1.pp
+    - rsyslog2.pp
+  notify:
+    - semanage-rsyslog-ports-tcp 
+    - semanage-rsyslog-ports-tcp
+    - firewall-rsyslog-tcp
+    - firewall-rsyslog-udp
+    - enabled-rsyslog
+
+- name: restart rsyslog
+  systemd:
+    name: rsyslog
+    state: restarted

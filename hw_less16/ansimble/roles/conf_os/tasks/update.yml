@@ -1,0 +1,26 @@
+---
+  - rpm_key:
+      state: present
+      key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+  - name: import elasticsearch repo
+    copy:
+      src: files/elasticsearch.repo
+      dest: /etc/yum.repos.d/elasticsearch.repo
+  - name: install epel-repo
+    yum:
+      name: epel-release
+      state: present
+  - name: Update os 
+    yum:
+      name: '*'
+      state: latest
+  - name: install vim,tree,htop,filebeat
+    yum:
+      name:
+       - vim
+       - tree
+       - htop
+       - filebeat
+       - telnet
+      state: present
+    notify: yum-clean-all

@@ -1,0 +1,4 @@
+server.port: 5601
+server.host: "0.0.0.0"
+server.name: "log"
+elasticsearch.hosts: ["localhost:9200"]
