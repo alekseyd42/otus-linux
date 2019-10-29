@@ -1,0 +1,92 @@
+---
+- name: Config net lab
+  hosts: centraloffice,office1,office2
+  become: true
+
+  tasks:
+   - block:
+     - name: Quering def route
+       shell: ip route show | grep default | awk {'print $1'}
+       register: def_route
+     - name: Delete default route
+       command: ip route delete default
+       when: "'default' in def_route.stdout "
+
+- name: config inet router
+  hosts: inetRouter
+  become: true
+  tasks:
+     - name: query 169.x.x.x route 1
+       shell: ip route show | grep "169.254.0.0/16 dev eth0" | awk {'print $1'}
+       register: route_deveth0
+     - name: delete 169 dev eth0 route 1
+       command: ip route del 169.254.0.0/16
+       when: "'169.254.0.0/16' in route_deveth0.stdout"    
+     
+     - name: query 169.x.x.x route 2
+       shell: ip route show | grep "169.254.0.0/16 dev eth1" | awk {'print $1'}
+       register: route_deveth1    
+     - name: delete 169 dev eth0 route 2
+       command: ip route del 169.254.0.0/16
+       when: "'169.254.0.0' in route_deveth1.stdout"
+     
+     - name: query route to CO
+       shell: ip route show
+       register: def_route_CO
+     - name: add route to CO
+       command: ip route add 192.168.0.0/16 via 192.168.255.2 dev eth1
+       when: " not '192.168.0.0/16' in def_route_CO.stdout"
+
+- name: config centralRouter
+  hosts: centralRouter
+  become: true
+  tasks:
+     - name: add default route to inetRouter
+       shell: ip route add 0.0.0.0/0 via 192.168.255.1 dev eth1
+     - name: query routes 
+       shell: ip route show
+       register: routes
+     - name: add route to office1
+       command: ip route add 192.168.2.0/24 via 192.168.255.6 dev eth5
+       when: "not '192.168.2.0/24' in routes.stdout"
+     - name: add route to office2
+       command: ip route add 192.168.1.0/24 via 192.168.255.10 dev eth6
+       when: "not '192.168.1.0/24' in routes.stdout"  
+
+
+- name: config centralServer
+  hosts: centralServer
+  become: true
+  tasks:
+     - name: add default route to CentralRouter
+       command: ip route add 0.0.0.0/0 via 192.168.0.1 dev eth1
+
+- name: config office1Router
+  hosts: office1Router
+  become: true
+  tasks:
+     - name: add default route to inetRouter
+       shell: ip route add 0.0.0.0/0 via 192.168.255.5 dev eth1
+
+       
+- name: config office1Server
+  hosts: office1Server
+  become: true
+  tasks:
+     - name: add default route to CentralRouter
+       command: ip route add 0.0.0.0/0 via 192.168.2.1 dev eth1
+
+- name: config office2Router
+  hosts: office2Router
+  become: true
+  tasks:
+     - name: add default route to inetRouter
+       shell: ip route add 0.0.0.0/0 via 192.168.255.9 dev eth1
+
+       
+- name: config office2Server
+  hosts: office2Server
+  become: true
+  tasks:
+     - name: add default route to CentralRouter
+       command: ip route add 0.0.0.0/0 via 192.168.1.1 dev eth1
