@@ -1,0 +1,9 @@
+---
+ - include: inetRouter.yml
+   when: ansible_fqdn == "inetRouter"
+ - include: inetRouter2.yml
+   when: ansible_fqdn == "inetRouter2"
+ - include: centralRouter.yml
+   when: ansible_fqdn == "centralRouter"
+ - include: centralServer.yml
+   when: ansible_fqdn == "centralServer"

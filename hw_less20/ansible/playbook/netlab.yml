@@ -1,0 +1,5 @@
+- name: HW 20
+  hosts: all
+  become: yes
+  roles: 
+    - netlab

@@ -1,0 +1,77 @@
+---
+- name: create route file
+  file:
+    path: /etc/sysconfig/network-scripts/route-eth1
+    state: touch 
+
+- name: add route for eth1
+  lineinfile:
+     path: /etc/sysconfig/network-scripts/route-eth1
+     line: 192.168.0.0/16 via 192.168.255.14
+
+- name: Enable routing
+  lineinfile:
+   path: /etc/sysctl.conf
+   line: net.ipv4.ip_forward = 1
+
+- name: reload_sysctl
+  command: sysctl -p 
+
+- name: restart network
+  command: service network restart
+
+- name: restart network
+  systemd:
+   name: network
+   state: restarted
+
+- name: Install epel-release 
+  yum:
+   name: epel-release 
+   state: present
+
+- name: Vim,tcpdump,nmap,iptables
+  yum:
+   name: "{{item}}"
+   state: present
+  with_items:
+   - vim
+   - tcpdump
+   - nmap
+   - iptables-services
+   - telnet 
+- name:
+  systemd:
+   name: iptables
+   state: started
+   enabled: yes 
+  
+- name: Masq
+  iptables:
+   table: nat
+   chain: POSTROUTING
+   out_interface: eth1
+   jump: MASQUERADE
+
+- name: Iptables add 8080 -> 80
+  iptables:
+    table: nat 
+    chain: PREROUTING
+    destination: 192.168.11.101 
+    protocol: tcp
+    match: tcp
+    destination_port: 8080
+    jump: DNAT
+    to_destination: 192.168.0.2:80
+- name: iptables 80->8080
+  iptables:  
+    table: nat
+    chain: POSTROUTING
+    source: 192.168.0.2 
+    protocol: tcp
+    match: tcp
+    source_port: 80
+    jump: SNAT
+    to_source: 192.168.11.101:8080
+   
+

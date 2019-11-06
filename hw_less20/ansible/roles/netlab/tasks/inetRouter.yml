@@ -1,0 +1,59 @@
+---
+- name: Install libselinux-python.x86_64
+  yum:
+   name: libselinux-python
+   state: present
+
+- name: create route file
+  file:
+    path: /etc/sysconfig/network-scripts/route-eth1
+    state: touch 
+
+- name: add route for eth1
+  lineinfile:
+     path: /etc/sysconfig/network-scripts/route-eth1
+     line: 192.168.0.0/16 via 192.168.255.2
+
+- name: Config sshd to alow pass auth
+  lineinfile:
+   path: /etc/ssh/sshd_config
+   regexp: '^PasswordAuthentication no'
+   line: PasswordAuthentication yes
+   state: present
+- name: Restart sshd
+  command: service sshd restart
+
+- name: IPTABLEs RULES
+  copy:
+    src: iptables
+    dest: /etc/sysconfig/iptables
+
+- name: Enable routing
+  lineinfile:
+   path: /etc/sysctl.conf
+   regexp: '^net.ipv4.ip_forward = 0'
+   line: net.ipv4.ip_forward = 1
+   state: present
+
+- name: reload_sysctl
+  command: sysctl -p 
+
+- name: restart network
+  command: service network restart
+
+- name: reload iptables
+  shell: iptables-restore < /etc/sysconfig/iptables
+
+- name: Install epel-release 
+  yum:
+   name: epel-release 
+   state: present
+
+- name: Vim,tcpdump,nmap
+  yum:
+   name: "{{item}}"
+   state: present
+  with_items:
+   - vim
+   - tcpdump
+   - nmap

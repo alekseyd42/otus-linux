@@ -1,0 +1,4 @@
+---
+# handlers file for roles/netlab
+- name: reload_sysctl
+  command: sysctl -p 

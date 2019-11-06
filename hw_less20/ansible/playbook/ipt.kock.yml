@@ -1,0 +1,36 @@
+---
+- name: config iptables
+  hosts: inetRouter2
+  become: yes
+
+#-A PREROUTING -d 192.168.11.101/32 -p tcp -m tcp --dport 8080 -j DNAT --to-destination 192.168.0.2:80 
+#-A POSTROUTING -s 192.168.0.2/32 -p tcp -m tcp --sport 80 -j SNAT --to-source 192.168.11.101:8080     
+#-A POSTROUTING -o eth1 -j MASQUERADE     
+  tasks:
+  - name: Masq
+    iptables:
+     table: nat
+     chain: POSTROUTING
+     out_interface: eth1
+     jump: MASQUERADE
+
+  - name: Iptables add 8080 -> 80
+    iptables:
+      table: nat 
+      chain: PREROUTING
+      destination: 192.168.11.101 
+      protocol: tcp
+      match: tcp
+      destination_port: 8080
+      jump: DNAT
+      to_destination: 192.168.0.2:80
+  - name: iptables 80->8080
+    iptables:  
+      table: nat
+      chain: POSTROUTING
+      source: 192.168.0.2 
+      protocol: tcp
+      match: tcp
+      source_port: 80
+      jump: SNAT
+      to_source: 192.168.11.101:8080
