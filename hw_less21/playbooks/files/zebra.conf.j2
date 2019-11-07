@@ -1,0 +1,24 @@
+hostname {{ansible_fqdn}}
+password zebra
+log file /var/log/quagga/zebra.conf
+!
+interface eth0
+ ipv6 nd suppress-ra
+!
+interface eth1
+ description Route1
+ ip address {{ ansible_eth1.ipv4.address }}/30
+ ipv6 nd suppress-ra
+!
+interface eth2
+ description Route2
+ ip address {{ ansible_eth2.ipv4.address }}/30
+ ipv6 nd suppress-ra
+!
+interface lo
+!
+ip forwarding
+!
+!
+line vty
+!

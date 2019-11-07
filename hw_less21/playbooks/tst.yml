@@ -1,0 +1,11 @@
+---
+- name: instal configure all hosts
+  hosts: R1
+  become: true
+  tasks:
+   - name: Config R2 Qaagga
+     template:
+         src: files/zebra.conf.j2
+         dest: /etc/quagga/zebra.conf
+         owner: quagga
+         group: quagga

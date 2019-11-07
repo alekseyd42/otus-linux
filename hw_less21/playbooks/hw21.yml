@@ -1,0 +1,89 @@
+---
+- name: instal configure all hosts
+  hosts: all
+  become: true
+
+  tasks:
+     - name: Install EPEL-Repo
+       yum:
+        name: epel-release
+        state: installed
+     - name: YUM update cache
+       yum:
+        update_cache: yes
+     #- name: UPDATE SYSTEM
+     #  yum:
+     #   name: '*' 
+     #   state: latest
+     - name: Install Quagga and others
+       yum: 
+        name: "{{item}}"
+        state: installed
+       with_items:
+        - quagga
+        - vim
+        - telnet
+        - libsemanage-python
+        - traceroute
+     
+     - name: Enable IP Forwarding
+       lineinfile:
+        path: /etc/sysctl.conf
+        line: "{{ item }}"
+       with_items:
+         - net.ipv4.conf.all.rp_filter=0
+         - net.ipv4.ip_forward=1
+     
+     - name: sysctl reload
+       command: sysctl -p
+
+     - name: conf SELINUX
+       seboolean:
+        name: zebra_write_config
+        state: yes
+        persistent: yes
+          
+     - name: Config Quagga
+       template:
+         src: files/zebra.conf.j2
+         dest: /etc/quagga/zebra.conf
+         owner: quagga
+         group: quagga
+
+     - name: Config R1 Quagga
+       copy:
+         src: files/R1/ospfd.conf
+         dest: /etc/quagga/
+         owner: quagga
+         group: quagga
+       when: ansible_fqdn == 'R1'
+     
+     - name: Config R2 Qaagga
+       copy:
+        src: files/R2/ospfd.conf
+        dest: /etc/quagga
+        owner: quagga
+        group: quagga
+       when: ansible_fqdn == 'R2'
+
+     - name: Config R3 Quagga
+       copy:
+        src: files/R3/ospfd.conf
+        dest: /etc/quagga/
+        owner: quagga
+        group: quagga
+       when: ansible_fqdn == 'R3' 
+
+     - name: Started ZEBRA
+       systemd:
+        name: zebra
+        state: started
+        enabled: yes
+     - name: Startted OSPFD
+       systemd:
+        name: ospfd
+        state: started
+        enabled: yes
+         
+
+       

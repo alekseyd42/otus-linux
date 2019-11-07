@@ -1,0 +1,37 @@
+---
+- name: HW21 Task 2
+  hosts: all
+  become: true
+  tasks:
+     - name: Config R1 Quagga
+       copy:
+         force: yes
+         src: files/R1/ospfd.conf.tsk2
+         dest: /etc/quagga/ospfd.conf
+         owner: quagga
+         group: quagga
+       when: ansible_fqdn == 'R1'
+     
+     - name: Config R2 Qaagga
+       copy:
+        force: yes
+        src: files/R2/ospfd.conf.tsk2
+        dest: /etc/quagga/ospfd.conf
+        owner: quagga
+        group: quagga
+       when: ansible_fqdn == 'R2'
+
+     - name: Config R3 Quagga
+       copy:
+        force: yes
+        src: files/R3/ospfd.conf.tsk2
+        dest: /etc/quagga/ospfd.conf
+        owner: quagga
+        group: quagga
+       when: ansible_fqdn == 'R3' 
+       
+     - name: Started ZEBRA
+       command: systemctl restart ospfd
+       
+     - name: Startted OSPFD
+       command: systemctl restart ospfd

@@ -1,0 +1,17 @@
+---
+- name: HW21 Task 2
+  hosts: R1
+  become: true
+  tasks:
+   - name: conf zebra
+     lineinfile:
+      path: /etc/quagga/zebra.conf
+      line: ip route 10.20.0.0/30 10.10.0.2
+   - name: conf ospfd
+     copy:
+      src: files/R1/ospfd.conf.tks3
+      dest: /etc/quagga/ospfd.conf
+   - name:
+     command: systemctl restart zebra
+   - name:
+     command: systemctl restart ospfd
