@@ -1,0 +1,2 @@
+ipa.lab.lan  ansible_host=192.168.50.10 ansible_ssh_private_key_file=.vagrant/machines/ipa.lab.lan/virtualbox/private_key
+cl0.lab.lan  ansible_host=192.168.50.11 ansible_ssh_private_key_file=.vagrant/machines/cl0.lab.lan/virtualbox/private_key

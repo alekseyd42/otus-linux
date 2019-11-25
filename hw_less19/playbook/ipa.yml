@@ -1,0 +1,66 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: insttall EPEL-repo
+      yum: name=epel-release state=present
+    - name: install packages
+      yum: name={{ item }} state=latest
+      with_items:
+        - vim
+
+- hosts: ipa
+  become: yes
+  tasks:
+   - name: install IPA Server
+     yum: name={{ item }} state=present
+     with_items:
+        - ipa-server
+        - ipa-server-dns
+   - name: Copy hosts 
+     copy: src=hosts.ipa dest=/etc/hosts group=root owner=root mode=644
+   - name: conf resolv.conf
+     lineinfile:
+             dest=/etc/resolv.conf
+             regexp='^search'
+             line='search lab.lan'
+   - name: configure IPA-SERVER
+     command: ipa-server-install -U -p otuslinux -a otuslinux -n lab.lan -r LAB.LAN --hostname ipa.lab.lan --setup-dns --auto-forwarder --no-reverse
+
+- hosts: cl0
+  become: yes
+  tasks:
+    - name: Install ipa-client
+      yum: name=ipa-client state=present
+    - name: copy resolv.conf
+      copy: src=resolv.conf.cl0 dest=/etc/resolv.conf group=root owner=root mode=644
+    - name: Copy hosts 
+      copy: src=hosts.cl0 dest=/etc/hosts group=root owner=root mode=644
+    - name: Joint {{ ansible_fqdn }} to realm
+      command: ipa-client-install -U --server ipa.lab.lan --domain lab.lan --realm LAB.LAN --force-ntpd --hostname cl0.lab.lan --mkhomedir -p admin@LAB.LAN -w otuslinux
+- hosts: ipa
+  become: yes
+  tasks:
+    - name: add user pinky to IPA server
+      ipa_user:
+       name: pinky
+       state: present
+       givenname: Pinky
+       sn: ACME
+       password: otuslinux
+       loginshell: /bin/bash
+       ipa_host: ipa.lab.lan
+       ipa_user: admin
+       ipa_pass: otuslinux
+    - name: add pinky to access group cl0
+      ipa_hbacrule:
+       name: cl0
+       state: present
+       host: cl0.lab.lan
+       user: pinky
+       ipa_host: ipa.lab.lan
+       ipa_user: admin
+       ipa_pass: otuslinux
+    
+      
+  

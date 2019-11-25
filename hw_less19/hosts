@@ -1,0 +1,2 @@
+ipa  ansible_host=192.168.50.10 ansible_ssh_private_key_file=.vagrant/machines/ipa/virtualbox/private_key
+cl0  ansible_host=192.168.50.11 ansible_ssh_private_key_file=.vagrant/machines/cl0/virtualbox/private_key
