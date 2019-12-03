@@ -1,0 +1,8 @@
+---
+
+- name: Quering def route
+  shell: ip route show | grep default | awk {'print $1'}
+  register: def_route
+
+
+  when: "'default' in def_route.stdout "

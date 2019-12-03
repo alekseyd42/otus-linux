@@ -1,0 +1,208 @@
+---
+##Install soft at all hosts
+- hosts: all
+  become: yes
+  tasks:
+   - name: Install packages
+     yum:
+      name: "{{ item }}"
+      state: latest
+     with_items:
+         - 'vim'
+         - 'tcpdump' 
+##ROUTERS
+- hosts: inetRouter
+  become: yes
+  tasks:
+  - name: install packages
+    yum:
+      name: libselinux-python
+      state: latest
+  - name: ipv4 forwarding  
+    sysctl:
+     name: net.ipv4.conf.all.forwarding
+     value: '1'
+     sysctl_set: yes
+     state: present
+     reload: yes
+  - name: config NOZEROCONF
+    lineinfile:
+     path: /etc/sysconfig/network
+     line: NOZEROCONF=yes
+  - name: config IPTABLES
+    iptables:
+      table: nat
+      chain: POSTROUTING
+      destination: '! 192.168.0.0/16'
+      out_interface: eth0
+      jump: MASQUERADE
+      state: present
+  - name: save iptables rules
+    shell: "iptables-save > /etc/sysconfig/iptables" 
+  - name: copy modprobe bond.conf file
+    copy:
+      src: files/inetRouter/bond.conf
+      dest: /etc/modprobe.d/bond.conf
+  - name: sync network settings
+    synchronize:
+      src: files/inetRouter/net/
+      dest: /etc/sysconfig/network-scripts/
+  #- name: enable bonding
+  #  modprobe:
+  #   name: bonding
+  #   state: present
+  
+
+
+- hosts: centralRouter
+  become: yes
+  tasks:
+   - name: ipv4 forwarding  
+     sysctl:
+      name: net.ipv4.conf.all.forwarding
+      value: '1'
+      sysctl_set: yes
+      state: present
+      reload: yes
+   - name: conf network NOZEROCONF
+     lineinfile:
+      path: /etc/sysconfig/network
+      line: NOZEROCONF=yes
+   - name: conf ROUTES
+     synchronize:
+      src: files/centralRouter/
+      dest: /etc/sysconfig/network-scripts/
+   
+- hosts: office1Router
+  become: yes
+  tasks:
+   - name: ipv4 forwarding  
+     sysctl:
+       name: net.ipv4.conf.all.forwarding
+       value: '1'
+       sysctl_set: yes
+       state: present
+       reload: yes
+   - name: conf network NOZEROCONF
+     lineinfile:
+      path: /etc/sysconfig/network
+      line: NOZEROCONF=yes
+   - name: conf ROUTES
+     synchronize:
+      src: files/office1Router/
+      dest: /etc/sysconfig/network-scripts/
+
+- hosts: office2Router
+  become: yes
+  tasks:
+   - name: ipv4 forwarding  
+     sysctl:
+       name: net.ipv4.conf.all.forwarding
+       value: '1'
+       sysctl_set: yes
+       state: present
+       reload: yes
+   - name: conf network NOZEROCONF
+     lineinfile:
+      path: /etc/sysconfig/network
+      line: NOZEROCONF=yes
+
+   - name: conf ROUTES
+     synchronize:
+      src: files/office2Router/
+      dest: /etc/sysconfig/network-scripts/
+
+##SERVERS
+- hosts: centralServer
+  become: yes
+  tasks:
+   - name: conf network NOZEROCONF
+     lineinfile:
+      path: /etc/sysconfig/network
+      line: NOZEROCONF=yes
+   - name: conf ROUTES
+     synchronize:
+      src: files/centralServer/
+      dest: /etc/sysconfig/network-scripts/
+
+- hosts: office1Server
+  become: yes
+  tasks:
+   - name: conf network NOZEROCONF
+     lineinfile:
+      path: /etc/sysconfig/network
+      line: NOZEROCONF=yes
+   - name: conf ROUTES
+     synchronize:
+      src: files/office1Server/
+      dest: /etc/sysconfig/network-scripts/
+
+- hosts: office2Server
+  become: yes
+  tasks:
+   - name: conf network NOZEROCONF
+     lineinfile:
+      path: /etc/sysconfig/network
+      line: NOZEROCONF=yes
+   - name: conf ROUTES
+     synchronize:
+      src: files/office2Server/
+      dest: /etc/sysconfig/network-scripts/
+
+- hosts: testServer1
+  become: yes
+  tasks:
+   - name: conf network NOZEROCONF
+     lineinfile:
+      path: /etc/sysconfig/network
+      line: NOZEROCONF=yes
+   - name: conf ROUTES
+     synchronize:
+      src: files/testServer1/
+      dest: /etc/sysconfig/network-scripts/
+
+- hosts: testServer2
+  become: yes
+  tasks:
+   - name: conf network NOZEROCONF
+     lineinfile:
+      path: /etc/sysconfig/network
+      line: NOZEROCONF=yes
+   - name: conf ROUTES
+     synchronize:
+      src: files/testServer2/
+      dest: /etc/sysconfig/network-scripts/
+
+- hosts: testClient1
+  become: yes
+  tasks:
+   - name: conf network NOZEROCONF
+     lineinfile:
+      path: /etc/sysconfig/network
+      line: NOZEROCONF=yes
+   - name: conf ROUTES
+     synchronize:
+      src: files/testClient1/
+      dest: /etc/sysconfig/network-scripts/
+
+- hosts: testClient2
+  become: yes
+  tasks:
+   - name: conf network NOZEROCONF
+     lineinfile:
+      path: /etc/sysconfig/network
+      line: NOZEROCONF=yes
+   - name: conf ROUTES
+     synchronize:
+      src: files/testClient2/
+      dest: /etc/sysconfig/network-scripts/
+
+
+
+- hosts: all
+  become: yes
+  tasks:
+   - name: Net1
+     shell: service network restart
+   - name: Net2
+     shell: service network restart

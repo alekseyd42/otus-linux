@@ -1,0 +1,30 @@
+---
+# tasks file for roles/netlan
+# delete default router on all servers
+
+#- name: Delete all default router
+#  include: del_def_route.yml
+#  when: not ansible_fqdn == 'inetRouter'
+
+- name: config inetRouter 
+  include: inetRouter.yml
+  when: ansible_fqdn == 'inetRouter'
+
+- include: centralRouter.yml
+  when: ansible_fqdn == 'centralRouter'
+
+- include: office1Router.yml
+  when: ansible_fqdn == 'office1Router'
+
+- include: office2Router.yml
+  when: ansible_fqdn == 'office2Router'
+
+- include: centralServer.yml
+  when: ansible_fqdn == 'centralServer'
+
+- include: office1Server.yml
+  when: ansible_fqdn == 'office1Server'
+
+- include: office2Server.yml
+  when: ansible_fqdn == 'office2Server'
+

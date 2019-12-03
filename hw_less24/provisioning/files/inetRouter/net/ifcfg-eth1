@@ -1,0 +1,6 @@
+DEVICE=eth1
+#HWADDR=08:00:27:bb:7f:e7
+TYPE=Ethernet
+ONBOOT=yes
+MASTER=bond0
+SLAVE=yes
