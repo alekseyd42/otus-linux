@@ -1,0 +1,6 @@
+DEVICE=eth2
+TYPE=Ethernet
+ONBOOT=yes
+BOOTPROTO=none
+NM_CONTROLLED=no
+BRIDGE=br0

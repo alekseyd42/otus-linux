@@ -1,0 +1,50 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: install EPEL-REPO
+      yum: name=epel-release state=present
+
+- hosts: bridge
+  become: true
+  tasks:
+    - name: install bridge utils
+      yum: name=bridge-utils state=latest
+    - name: configure network
+      synchronize:
+       src: files/bridge/net-scr/
+       dest: /etc/sysconfig/network-scripts/
+    - name: reboot server
+      reboot:
+    - name: restart network service
+      command: service network restart
+- hosts: client, server
+  become: true
+  tasks:
+    - name: install packages
+      yum:
+        name: "{{item}}" 
+        state: latest
+      with_items:
+          - openvpn
+          - iperf3
+          - vim
+          - tree
+    - name: copy key file
+      copy: src=files/server/keys/secret.key dest=/etc/openvpn/
+- hosts: server
+  become: true
+  tasks:
+    - name: copy openvpn server config
+      copy: src=files/server/server.conf dest=/etc/openvpn/
+    - name: start openvpn server
+      systemd: name=openvpn@server state=started enabled=yes
+    - name: run iperf3
+      command: 'iperf3 -s -D'
+- hosts: client
+  become: true
+  tasks:
+    - name: copy openvpn server config
+      copy: src=files/client/server.conf dest=/etc/openvpn/
+    - name: start openvpn server
+      systemd: name=openvpn@server state=started enabled=yes

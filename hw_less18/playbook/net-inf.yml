@@ -2,7 +2,6 @@
 - name: Config net lab
   hosts: centraloffice,office1,office2
   become: true
-
   tasks:
    - block:
      - name: Quering def route
