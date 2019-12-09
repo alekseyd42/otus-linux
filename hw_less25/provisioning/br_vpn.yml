@@ -5,19 +5,6 @@
     - name: install EPEL-REPO
       yum: name=epel-release state=present update_cache=yes
           
-- hosts: bridge
-  become: true
-  tasks:
-    - name: install bridge utils
-      yum: name=bridge-utils state=latest
-    - name: configure network
-      synchronize:
-       src: files/bridge/net-scr/
-       dest: /etc/sysconfig/network-scripts/
-    - name: reboot server
-      reboot:
-    - name: restart network service
-      command: service network restart
 - hosts: client, server
   become: true
   tasks:
