@@ -1,0 +1,22 @@
+---
+# tasks file for roles/nginx
+- name: instal epel-repo , update OS
+  include: epel_upd.yml
+- name: copy nginx conf
+  copy:
+    src: files/nginx.conf
+    dest: /etc/nginx/nginx.conf
+- name: mkdir access
+  file:
+    path: /usr/share/nginx/html/access
+    state: directory
+- name: copy access
+  copy:
+    src: files/ac_index.html
+    dest: /usr/share/nginx/html/access/index.html
+- name: enabled and start nginx
+  systemd: 
+    name: nginx
+    state: started
+    enabled: yes
+
