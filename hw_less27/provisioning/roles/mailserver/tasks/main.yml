@@ -1,0 +1,33 @@
+---
+# tasks file for roles/mailserver
+- name: update OS
+  include_tasks: epel_upd.yml
+
+- name: make self-certs
+  include: certs.yml 
+
+- name: postfix
+  include_tasks: postfix.yml
+
+- name: dovecot
+  include_tasks: dovecot.yml
+
+- name: start postfix and dovecot
+  systemd:
+    name: "{{item}}"
+    state: started
+    enabled: yes
+  with_items:
+    - postfix
+    - dovecot
+- name: nginx-php.yml
+  include: nginx-php.yml
+
+- name: mysql.yml
+  include: mysql.yml
+
+- name: roundcubemail
+  include: rcmail.yml
+
+- name: selinux conf
+  include : selinux.yml

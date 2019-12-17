@@ -1,0 +1,13 @@
+---
+#install and configure postfix
+- name: install postfix
+  yum:
+    name: postfix 
+    state: latest
+- name: copy conf files
+  copy:
+    src: files/{{ item}}
+    dest: /etc/postfix
+  with_items:
+    - main.cf
+    - master.cf

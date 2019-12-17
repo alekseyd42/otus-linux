@@ -1,0 +1,13 @@
+---
+- name: copy mail0.conf
+  copy:
+    src: nginx/mail0.conf 
+    dest: /etc/nginx/conf.d/mail0.conf
+- name: start NGINX and PHP-FPM
+  systemd:
+    name: "{{item}}"
+    state: started
+    enabled: yes
+  with_items:
+     - nginx
+     - php-fpm 

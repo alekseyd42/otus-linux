@@ -1,0 +1,29 @@
+---
+- name: create directory
+  file:
+    state: directory
+    path: "{{rc_path}}" 
+- name: xetract distr RC
+  unarchive:
+    src: files/roundcubemail-1.4.1-complete.tar.gz
+    dest: "{{rc_path}}"
+- name: copy dir
+  copy:
+    remote_src: yes
+    src: "{{rc_path}}roundcubemail-1.4.1/"
+    dest: "{{rc_path}}"
+- name: remive old dir
+  file:
+    path: "{{rc_path}}roundcubemail-1.4.1/"
+    state: absent
+- name: Import mysql.initial.sql 
+  mysql_db:
+    login_user: roundcube
+    login_password: vagrant  
+    state: import
+    name: roundcube
+    target: /usr/share/nginx/html/roundcubemail/SQL/mysql.initial.sql
+- name: copy rcmail configs
+  synchronize:
+    src: files/rcb/
+    dest: /usr/share/nginx/html/roundcubemail/config

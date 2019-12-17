@@ -1,0 +1,42 @@
+---
+## make self-signed cert
+##CA
+- name: generate CA priv.key    
+  openssl_privatekey:
+    path: "{{cert_path}}CAkey.pem"
+    size: 4096
+- name:  generate CA certificate csr
+  openssl_csr:
+    path: "{{cert_path}}CA.csr"
+    privatekey_path: "{{cert_path }}CAkey.pem"
+    organization_name: "OTUSMAILTST"
+    key_usage:
+      - keyCertSign
+      - cRLSign
+      - digitalSignature
+    force: True
+- name: generate CA certificate
+  openssl_certificate:
+    path: "{{cert_path}}CA.pem"
+    privatekey_path: "{{cert_path}}CAkey.pem"
+    csr_path: "{{cert_path}}CA.csr"
+    provider: selfsigned   
+
+##Cert  
+- name: generate priv.key    
+  openssl_privatekey:
+    path: "{{cert_path}}mailkey.pem"
+    size: 4096
+- name:  generate certificate csr
+  openssl_csr:
+    path: "{{cert_path}}mail.csr"
+    privatekey_path: "{{cert_path }}mailkey.pem"
+    common_name: mail0.lan
+- name: generate certificate
+  openssl_certificate:
+    path: "{{cert_path}}mail.pem"
+    privatekey_path: "{{cert_path}}mailkey.pem"
+    csr_path: "{{cert_path}}mail.csr"
+    ownca_path: "{{cert_path}}CA.pem"
+    ownca_privatekey_path: "{{cert_path}}CAkey.pem"
+    provider: ownca

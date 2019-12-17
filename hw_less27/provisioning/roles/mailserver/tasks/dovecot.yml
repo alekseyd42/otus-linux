@@ -1,0 +1,10 @@
+---
+#instal and configure dovecot
+- name: install dovecot
+  dnf:
+    name: dovecot
+    state: latest
+- name: copy conf files
+  synchronize:
+    src: files/dovecot/
+    dest: /etc/dovecot/

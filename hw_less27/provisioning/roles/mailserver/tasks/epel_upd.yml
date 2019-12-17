@@ -1,0 +1,24 @@
+---
+# install EPEL-REPO and Update OS
+#epel-repo
+- name: install epel-repo
+  yum:
+   name: epel-release
+   state: latest
+   update_cache: yes
+#update oneview_logical_interconnect_group:
+- name: update yum cache
+  yum:
+   update_cache: yes
+# update OS
+- name: update OS
+  yum:
+   name: '*'
+   state: latest
+# install packages
+- name: install packages
+  yum:
+   name: [vim,tree,htop,mailx,wget,nginx,php,php-*,mysql-server,python2-PyMySQL,python3-PyMySQL]
+   state: latest
+
+    

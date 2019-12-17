@@ -1,0 +1,5 @@
+---
+# vars file for roles/mailserver
+cert_path: /etc/ssl/certs/
+mysql_root_password: vagrant
+rc_path: /usr/share/nginx/html/roundcubemail/
