@@ -28,7 +28,7 @@ http://192.168.11.101
 		}
 	}
 ```
-[nginx.conf](provision/roles/nginx/files)
+[nginx.conf](provision/roles/nginx/files/nginx.conf)
 
 
 
