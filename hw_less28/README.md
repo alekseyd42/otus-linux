@@ -23,11 +23,11 @@
 В вагранте запускается две ВМ DB0 и DB1
 Плэйбукой устанавливается mysql на обе ВМ.  
 На сервере db0 ипортируется база данны Bet,делается дамп(/root/repl.sql) с исключением таблиц из задания.  
-на сервере db1 импортируется дамп(repl.sql), настраиватеся и запускается репликация.
+на сервере db1 импортируется дамп(repl.sql), настраиватеся и запускается репликация.  
 Проверка:  
 репликация:  
 **DB1:**    
-mysql -uroot -e "show slave status\G" 
+mysql -uroot -e "show slave status\G"   
 добавление строки:  
 **DB0:**  
 mysql -uroot -D bet -e "INSERT INTO bookmaker (id,bookmaker_name) VALUES(42,'TEST');";mysq│
