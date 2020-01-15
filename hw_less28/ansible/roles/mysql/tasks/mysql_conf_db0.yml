@@ -1,10 +1,14 @@
 ---
+- name: copy bet.dmp
+  copy:
+    src: bet.dmp
+    dest: /root/bet.dmp
 
 - name: import database
   mysql_db:
     name: bet
     state: import
-    target: /vagrant/bet.dmp
+    target: /root/bet.dmp
     login_user: root
     login_password: "{{mysql_root_password}}"
 
@@ -29,6 +33,4 @@
     login_password: "{{mysql_root_password}}"
 
 - name: make dump for replication 
-  shell: mysqldump --all-databases --triggers --routines --master-data --events -uroot > /root/repl.sql
-    
-
+  shell: mysqldump --all-databases --triggers --routines --master-data --events --ignore-table=bet.events_on_demand --ignore-table=bet.v_same_event -uroot > /root/repl.sql

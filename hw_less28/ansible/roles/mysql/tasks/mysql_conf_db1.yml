@@ -21,8 +21,34 @@
     src: config
     dest: /root/.ssh/
     mode: 0600
+- name: check ssh-key from remotehost 
+  shell: ssh-keyscan -H 192.168.11.100 >> /root/.ssh/known_hosts
+  args:
+    creates: /root/.ssh/known_hosts
+
 - name: copy repl.sql
   shell: scp root@192.168.11.100:/root/repl.sql /root
-  
+  args: 
+    creates: /root/repl.sql
+
+- name: import database
+  mysql_db:
+    name: bet
+    state: import
+    target: /root/repl.sql
+    login_user: root
+    login_password: "{{mysql_root_password}}"
+
+- name: configure replication on slave server db1
+  mysql_replication:
+      mode: changemaster
+      master_host: 192.168.11.100
+      master_auto_position: yes
+      master_user: repl_usr
+      master_password: "{{mysql_root_password}}"
+- name:
+  mysql_replication:
+    mode: startslave
+      
 
 
