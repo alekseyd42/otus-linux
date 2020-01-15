@@ -1,0 +1,10 @@
+[mysqld]                                                                                   
+server-id = 2                                                                            
+log-bin = mysql-bin                                                                 
+expire-logs-days = 7                                                               
+max-binlog-size = 16M                                                                      
+binlog-format = "MIXED"                                                                    
+binlog_do_db = bet                                                                         
+log-slave-updates = on                                                                   
+gtid-mode = on       
+enforce-gtid-consistency = on 

@@ -1,0 +1,16 @@
+---
+# tasks file for roles/mysql
+- name: update OS and install package
+  include_tasks: epel_upd.yml
+
+- name: mysql_secure_installation
+  include_tasks: mysql_sec_inst.yml
+
+- name: Configure mysql
+  include_tasks: mysql_conf_db0.yml
+  when: ansible_fqdn == 'db0' 
+
+- name: Configure mysql
+  include_tasks: mysql_conf_db1.yml
+  when: ansible_fqdn == 'db1'
+

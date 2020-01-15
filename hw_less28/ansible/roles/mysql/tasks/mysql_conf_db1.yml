@@ -1,0 +1,28 @@
+---
+- name: copy repl conf files
+  copy:
+    src: mysql/mysql-repl-2.cnf
+    dest: /etc/my.cnf.d/
+- name: restart mysql server
+  systemd:
+    name: mysqld
+    state: restarted
+- name: mkdir /root/.ssh
+  file:
+    path: /root/.ssh
+    state: directory 
+- name: copy ssh key
+  copy:
+    src: ../../../../.vagrant/machines/db0/virtualbox/private_key
+    dest: /root/.ssh/db0.key
+    mode: 0600
+- name: copy ssh config key
+  copy:
+    src: config
+    dest: /root/.ssh/
+    mode: 0600
+- name: copy repl.sql
+  shell: scp root@192.168.11.100:/root/repl.sql /root
+  
+
+

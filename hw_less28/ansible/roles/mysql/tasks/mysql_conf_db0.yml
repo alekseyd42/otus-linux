@@ -1,0 +1,34 @@
+---
+
+- name: import database
+  mysql_db:
+    name: bet
+    state: import
+    target: /vagrant/bet.dmp
+    login_user: root
+    login_password: "{{mysql_root_password}}"
+
+- name: copy repl conf files
+  copy:
+    src: mysql/mysql-repl-1.cnf
+    dest: /etc/my.cnf.d/
+
+- name: restart mysql server
+  systemd:
+    name: mysqld
+    state: restarted
+
+- name: Specify grants composed of more than one word
+  mysql_user:
+    name: repl_usr
+    host: "%"
+    password: "{{ mysql_root_password }}"
+    priv: "*.*:REPLICATION SLAVE"
+    state: present
+    login_user: root
+    login_password: "{{mysql_root_password}}"
+
+- name: make dump for replication 
+  shell: mysqldump --all-databases --triggers --routines --master-data --events -uroot > /root/repl.sql
+    
+
