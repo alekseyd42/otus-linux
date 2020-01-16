@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+    nginx0:
+       image: alexd42/nginx0
+       container_name: nginx0
+       depends_on:
+              - php-fpm0
+       volumes:
+           - ./site:/site
+       ports:
+          - "80:80"
+       links:
+         - "php-fpm0:php-fpm0"
+    php-fpm0:
+      image: alexd42/php-fpm0
+      container_name: php-fpm0
+      volumes: 
+          - ./site:/site
+      
+
+      
