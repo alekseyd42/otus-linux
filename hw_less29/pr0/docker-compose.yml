@@ -1,0 +1,66 @@
+###
+version: '3.7'
+services:
+    mysql0: 
+        image: alexd42/mysql:node
+        container_name: mysql0
+        hostname: mysql0
+        networks:
+            mysql_net:
+                 ipv4_address: 172.28.0.10
+        restart: always
+        volumes:
+            - mysql0_data:/var/lib/mysql
+        
+    mysql1: 
+        image: alexd42/mysql:node
+        container_name: mysql1
+        hostname: mysql1
+        networks:
+            mysql_net:
+                 ipv4_address: 172.28.0.11
+        restart: always
+        volumes:
+            - mysql1_data:/var/lib/mysql
+        
+    mysql2: 
+        image: alexd42/mysql:node
+        container_name: mysql2
+        hostname: mysql2
+        networks:
+            mysql_net:
+                 ipv4_address: 172.28.0.12
+        restart: always
+        volumes:
+            - mysql2_data:/var/lib/mysql
+        
+    mysql_router: 
+        image: alexd42/mysql:router
+        container_name: mysql_router
+        hostname: mysql_router
+        networks:
+           mysql_net:
+                 ipv4_address: 172.28.0.13
+        depends_on:
+            - mysql0
+            - mysql1
+            - mysql2
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock 
+            - mysql-router_data:/mysql_router
+        ports:
+            - 6446:6446
+            - 6447:6447
+networks:
+    mysql_net:
+        driver: bridge
+        ipam: 
+         config:
+          - subnet: 172.28.0.0/16
+        internal: true
+volumes:
+    mysql0_data:
+    mysql1_data:
+    mysql2_data:
+    mysql-router_data:
+    

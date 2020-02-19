@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+##Functions
+function procid () {
+lspid=$(ls /proc| awk /[0-9]/)
+for pid in ${lspid[@]}
+    do
+        if [ -d /proc/$pid/ ]; then
+            read comm < /proc/$pid/cmdline
+            if [ $comm = "mysqld-D" ];then
+               mysqlpid=$pid
+            fi
+        fi
+    done
+}
+##VARS
+binlog=/var/lib/mysql/binlog.index
+## SCRIPT
+if [ ! -f $binlog ]
+then
+rm -rf /var/lib/mysql/*
+chown mysql:mysql /var/log/mysqld.log
+mysqld --initialize-insecure
+mysqld -D 
+mysql -uroot -e "alter user 'root'@'localhost' identified WITH mysql_native_password by 'password' ;"
+mysql -uroot -ppassword -e "update mysql.user set host='%' where user='root' and host='localhost';"
+procid;kill -9 $mysqlpid;mysqld -D
+mysql -uroot -ppassword -e "GRANT BACKUP_ADMIN, CLONE_ADMIN, PERSIST_RO_VARIABLES_ADMIN, SYSTEM_VARIABLES_ADMIN ON *.* TO 'root'@'%' WITH GRANT OPTION;"
+procid;kill -9 $mysqlpid
+fi
+chown mysql:mysql /var/log/mysqld.log
+mysqld

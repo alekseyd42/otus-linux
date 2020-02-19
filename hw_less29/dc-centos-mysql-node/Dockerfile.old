@@ -1,0 +1,17 @@
+FROM centos:latest
+
+COPY ["start.sh","configure_mysql.sql","./"]
+
+RUN dnf install mysql-server -y && \
+    setcap -r /usr/libexec/mysqld && \
+    echo "user=mysql" >> /etc/my.cnf.d/mysql-server.cnf && \
+    rm -rf /var/lib/mysql/ && \
+    mysqld --initialize-insecure && \
+    ln -sf /dev/stderr /var/log/mysql/mysqld.log && \
+    chown mysql:mysql /var/log/mysql/mysqld.log && \
+    chmod 774 /var/log/mysql/ && \
+    mysqld -D && \
+    mysql -uroot < configure_mysql.sql    
+
+EXPOSE 3306
+CMD ["./start.sh"]
