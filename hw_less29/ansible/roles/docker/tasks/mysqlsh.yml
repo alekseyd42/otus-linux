@@ -1,0 +1,10 @@
+- name: install MYSQL Shell
+  block:
+    - name: Install repo 
+      dnf:
+       name: https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
+       state: present
+    - name: install package
+      dnf: 
+        name: mysql-shell
+        state: latest
