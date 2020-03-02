@@ -1,0 +1,18 @@
+---
+#swarm
+- name: mkdir for containers volumes
+  file:
+    path: /tmp/{{ item }}
+    state: directory
+  with_items:
+    - mysql0_data
+    - mysql1_data
+    - mysql2_data
+    - mysql-router_data
+- name: init
+  shell: docker swarm init --advertise-addr 192.168.11.100
+  run_once: yes
+
+- name: start stack pr0
+  shell: docker stack deploy -c /vagrant/pr0/docker-compose.yml pr0
+  run_once: yes

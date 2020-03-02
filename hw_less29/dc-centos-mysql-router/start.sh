@@ -24,7 +24,13 @@ tstcon mysql0
 mysqlsh --uri="root@mysql0" -p"password" --no-wizard --js -i -e "dba.configureInstance()"
 mysqlsh --uri="root@mysql1" -p"password" --no-wizard --js -i -e "dba.configureInstance()"
 mysqlsh --uri="root@mysql2" -p"password" --no-wizard --js -i -e "dba.configureInstance()"
-docker restart mysql0 mysql1 mysql2
+var0=$(docker service ls |grep mysql[0-9]|awk '{print $2}')
+for service in ${var0[@]}
+do
+docker service update --force $service
+done
+
+docker service update $(docker service ls -q) --force
 ##Create cluster
 tstcon mysql0
 

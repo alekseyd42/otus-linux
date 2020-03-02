@@ -1,14 +1,26 @@
 ### MYSQL Innodb-cluster
 Поднимаем Innodb cluster в докере с docker-compose и docker-swarm
 
+vagrant UP  
+Поднимается ВМ , ansible ставит docer в котором стартует docker swarm в составе четырех контейнеров:
+три mssql ноды(mssql0-2)  
+один mssql роутер 
+На сборку кластера уходит около одной-двух минут.  
+*Проверка*  
+mysqlsh --uri=root@192.168.11.100:6446 -ppassword  
+(dba.getCluster()).status()  
 
-metadata_exists=$(mysqlsh --uri="$MYSQL_USER"@"$MYSQL_HOST":"$MYSQL_PORT" -p"$MYSQL_ROOT_PASSWORD" --no-wizard --js -i -e "dba.getCluster( '${CLUSTER_NAME}' )" 2>&1 | grep "<Cluster:$CLUSTER_NAME>")
+или  
+Vagrant ssh  
+mysqlsh --uri=root@192.168.11.100:6446 -ppassword  
+(dba.getCluster()).status()  
 
 
-var1=$(mysqlsh --uri="root@mysql0" -p"password" --no-wizard --js -i -e  "dba.getCluster( 'mysql_cl' )"| grep "<Cluster:mysql_cl>")
-http://insidemysql.com/mysqlvp/idc/
+Образы контейнеров сделаны на основе centos 8 с установденным mssql8   
+[mssql-node](./dc-centos-mysql-node)  
 
 
-mysqlsh --uri=root@172.28.0.13:6446
-(dba.getCluster()).status()
-(dba.getCluster()).rescan()
+[mssql-router](./dc-centos-mysql-router)    
+
+[docker-compose.yml](./pr0/docker-compose.yml)  
+

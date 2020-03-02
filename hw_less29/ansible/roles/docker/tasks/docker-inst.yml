@@ -10,7 +10,7 @@
     state: present
 - name: Install docker 
   dnf:
-    name: docker-ce
+    name: [docker-ce]
     state: latest
 
 - name: install docker and docker compose
@@ -30,4 +30,6 @@
     name: docker
     state: started
     enabled: yes 
+
+
 
