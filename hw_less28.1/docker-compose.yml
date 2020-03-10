@@ -1,0 +1,34 @@
+version: "3.7"
+services:
+   nginx:
+    build: ./nginx
+    image: alexd42/hw28_ngnx:latest
+    ports:
+        - 80:80
+        - 8000:8000
+        - 9000:9000
+        - 4000:4000
+    volumes:
+        - "./www:/www"
+        - "./nginx/default.conf:/etc/nginx/conf.d/default.conf"
+    depends_on:
+        - php-fpm
+        - django
+        - angular
+
+     
+   php-fpm:
+    build: ./php-fpm
+    image: alexd42/hw28_php-fpm:latest
+    volumes:
+       - "./www:/www"
+   django:
+    build: ./django
+    image: alexd42/hw28_django:latest
+    volumes:
+        - "./www:/www"
+   angular:
+    build: ./ang
+    image: alexd42/hw28_angular:latest
+    volumes:
+        - "./www:/www"
