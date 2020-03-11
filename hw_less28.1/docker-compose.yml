@@ -2,7 +2,8 @@ version: "3.7"
 services:
    nginx:
     build: ./nginx
-    image: alexd42/hw28_ngnx:latest
+    image: alexd42/hw28_ngnx
+    hostname: nginx
     ports:
         - 80:80
         - 8000:8000
@@ -15,20 +16,24 @@ services:
         - php-fpm
         - django
         - angular
-
      
    php-fpm:
     build: ./php-fpm
-    image: alexd42/hw28_php-fpm:latest
+    image: alexd42/hw28_php-fpm
+    hostname: php-fpm
     volumes:
        - "./www:/www"
    django:
     build: ./django
-    image: alexd42/hw28_django:latest
+    image: alexd42/hw28_django
+    hostname: django
     volumes:
         - "./www:/www"
    angular:
     build: ./ang
-    image: alexd42/hw28_angular:latest
+    hostname: angular
+    image: alexd42/hw28_angular
     volumes:
         - "./www:/www"
+
+            
