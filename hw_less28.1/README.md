@@ -26,3 +26,8 @@ vagrant up
 [angular](./ang/)  
 [docker-compose-swarm](docker_compose-swarm.yaml)  
 Разворачивается всё ансиблом из вагрант файла.  
+Для проверки:  
+* [Nginx](http://192.168.11.100)   
+* [laravel](http://192.168.11.100:8000)  
+* [django](http://192.168.11.100:9000)  
+* [angular](http://192.168.11.100:4000)  
