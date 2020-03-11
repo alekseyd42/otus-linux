@@ -1,0 +1,20 @@
+---
+#swarm
+#- name: init
+#  shell: docker swarm init --advertise-addr 192.168.11.100
+#  run_once: yes
+
+#- name: start stack pr0
+#  shell: docker stack deploy -c /vagrant/docker-compose-swarm.yml pr0
+#  run_once: yes
+- name: init
+  docker_swarm:
+    state: present
+    advertise_addr: 192.168.11.100
+
+- name: Deploy stack from a compose file
+  docker_stack:
+      state: present
+      name: pr0
+      compose:
+        - /vagrant/docker-compose-swarm.yml

@@ -1,0 +1,19 @@
+---
+# install EPEL-REPO and Update OS
+#epel-repo
+- name: install epel-repo
+  dnf:
+   name: epel-release
+   state: latest
+# update OS
+- name: update OS
+  dnf:
+   name: '*'
+   state: latest
+# install packages
+- name: install packages
+  dnf:
+   name: [vim,tree,htop,wget,telnet,python3]
+   state: latest
+
+    

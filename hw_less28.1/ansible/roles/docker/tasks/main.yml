@@ -1,0 +1,9 @@
+---
+# tasks file for roles/docker
+- name: UPDATE OS
+  include_tasks: epel_upd.yml
+- name: DOCKER
+  include_tasks: docker-inst.yml
+- name: SWARM
+  include_tasks: swarm.yml
+  

@@ -1,0 +1,38 @@
+---
+#Docker install repo and package
+- name: Download docker repo 
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+- name: install containerd.io
+  dnf:
+    name: https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
+    state: present
+- name: Install docker 
+  dnf:
+    name: [docker-ce]
+    state: latest
+
+- name: install docker and docker compose
+  block: 
+    - name : install dockercompose
+      get_url:
+        url: https://github.com/docker/compose/releases/download/1.25.0/docker-compose-Linux-x86_64
+        dest: /usr/bin/docker-compose
+    - name: set execute
+      file:
+        dest: /usr/bin/docker-compose
+        mode: a+x 
+
+- name: install docker-py, jsondiff,pyyaml
+  pip:
+    name: [ docker-py,jsondiff,pyyaml ]
+
+- name: Enable dockewr service
+  systemd:
+    name: docker
+    state: started
+    enabled: yes 
+
+
+
