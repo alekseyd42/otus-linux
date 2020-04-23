@@ -1,0 +1,25 @@
+---
+- name: Create data cluster
+  shell: su postgres -c '/usr/bin/initdb -D /var/lib/pgsql/data' 
+
+- name: start PG
+  systemd:
+    name: postgresql
+    state: started
+    enabled: yes 
+- name: set password for postgres
+  postgresql_user:
+    db: postgres
+    user: postgres
+    password: postgres
+- name: copy postgres.conf
+  copy:
+    src: "{{ item }}"
+    dest: /var/lib/pgsql/data/{{ item }}
+  with_items:
+      - "postgresql.conf"
+      - "pg_hba.conf"
+- name : restart postgres
+  systemd:
+    name: postgresql
+    state: restarted

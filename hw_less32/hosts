@@ -1,0 +1,3 @@
+[all]
+pgsql0	ansible_host=192.168.11.100	ansible_ssh_private_key_file=../.vagrant/machines/pgsql0/virtualbox/private_key
+pgsq11	ansible_host=192.168.11.101	ansible_ssh_private_key_file=../.vagrant/machines/pgsql1/virtualbox/private_key

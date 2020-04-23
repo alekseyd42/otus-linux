@@ -1,0 +1,8 @@
+---
+#w tasks file for roles/pg
+- name: update and packages
+  include_tasks: epel_upd.yml
+- name: configure
+  include_tasks: conf_os.yml
+- name: conf PG
+  include_tasks: pg.yml
