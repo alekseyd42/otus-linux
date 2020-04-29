@@ -1,0 +1,39 @@
+---
+- name: check postgres InitDB exist
+  stat:
+   path: '{{ pgpath }}/data/PG_VERSION'
+  register: pginitdb
+- name: Create data cluster
+  shell: "su postgres -c '/usr/bin/initdb -D /var/lib/pgsql/data' "
+  when: pginitdb.stat.exists == False  
+- name: Create .pgpass file for postgres user
+  file:
+   path: '{{ pgpath }}.pgpass'
+   state: touch
+   group: postgres
+   owner: postgres
+   mode: '0600'
+- name: Clear PG data directory
+  file:
+   path: '{{ pgpath }}/data/'
+   state: absent
+- name: add replication pass
+  lineinfile:
+   path: '{{ pgpath }}.pgpass'
+   line: '*:*:*:repluser:password'
+- name: sync PGdata from server pgsql0
+  shell: 'su - postgres -c "pg_basebackup -h 192.168.11.100 -D "{{ pgpath }}data" -U repluser -v -P --write-recovery-conf -X stream" '
+  when: pginitdb.stat.exists == False
+     
+#- name: copy postgres.conf and pg_hba.conf
+#  copy:
+#    src: pgsql0/{{ item }}
+#    dest: /var/lib/pgsql/data/{{ item }}
+#  with_items:l
+#      - postgresql.conf
+#      - pg_hba.conf
+#- name : restart postgres
+#  systemd:
+#    name: postgresql
+#    state: restarted
+

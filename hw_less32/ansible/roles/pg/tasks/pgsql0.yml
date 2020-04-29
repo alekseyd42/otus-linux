@@ -12,14 +12,24 @@
     db: postgres
     user: postgres
     password: postgres
-- name: copy postgres.conf
+- name: create replication user
+  postgresql_user:
+    login_user: postgres
+    login_password: postgres
+    db: postgres
+    user: repluser
+    password: password
+    role_attr_flags: REPLICATION
+    
+- name: copy postgres.conf and pg_hba.conf
   copy:
-    src: "{{ item }}"
+    src: pgsql0/{{ item }}
     dest: /var/lib/pgsql/data/{{ item }}
   with_items:
-      - "postgresql.conf"
-      - "pg_hba.conf"
+      - postgresql.conf
+      - pg_hba.conf
 - name : restart postgres
   systemd:
     name: postgresql
     state: restarted
+
