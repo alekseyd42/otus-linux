@@ -25,15 +25,10 @@
   shell: 'su - postgres -c "pg_basebackup -h 192.168.11.100 -D "{{ pgpath }}data" -U repluser -v -P --write-recovery-conf -X stream" '
   when: pginitdb.stat.exists == False
      
-#- name: copy postgres.conf and pg_hba.conf
-#  copy:
-#    src: pgsql0/{{ item }}
-#    dest: /var/lib/pgsql/data/{{ item }}
-#  with_items:l
-#      - postgresql.conf
-#      - pg_hba.conf
-#- name : restart postgres
-#  systemd:
-#    name: postgresql
-#    state: restarted
-
+- name: pg_hba.conf
+  copy:
+    src: pgsql1/{{ item }}
+    dest: /var/lib/pgsql/data/{{ item }}
+  with_items:
+      - pg_hba.conf
+  notify: PG Start
