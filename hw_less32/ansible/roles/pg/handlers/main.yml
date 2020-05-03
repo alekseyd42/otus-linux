@@ -1,2 +1,10 @@
 ---
 # handlers file for roles/pg
+- name: PG Start
+  systemd:
+   name: postgresql
+   state: started
+- name: PG Restart
+  systemd:
+   name: postgresql
+   state: restarted 
