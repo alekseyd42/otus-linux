@@ -22,7 +22,7 @@
    path: '{{ pgpath }}.pgpass'
    line: '*:*:*:repluser:password'
 - name: sync PGdata from server pgsql0
-  shell: 'su - postgres -c "pg_basebackup -h 192.168.11.100 -D "{{ pgpath }}data" -U repluser -v -P --write-recovery-conf -X stream" '
+  shell: 'su - postgres -c "pg_basebackup -h 192.168.11.100 -D "{{ pgpath }}data" -U repluser -v -P --write-recovery-conf -X stream -S replslot" '
   when: pginitdb.stat.exists == False
      
 - name: pg_hba.conf

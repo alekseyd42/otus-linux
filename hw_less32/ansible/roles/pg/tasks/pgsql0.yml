@@ -1,17 +1,31 @@
 ---
+- name: check postgres InitDB exist
+  stat:
+   path: '{{ pgpath }}/data/PG_VERSION'
+  register: pginitdb
+
 - name: Create data cluster
-  shell: su postgres -c '/usr/bin/initdb -D /var/lib/pgsql/data' 
+  shell: su postgres -c '/usr/bin/initdb -D /var/lib/pgsql/data'
+  when: pginitdb.stat.exists == False 
+
+- name: copy .pgpass
+  copy:
+   src: .pgpass
+   dest: /root/.pgpass
+   mode: '600' 
 
 - name: start PG
   systemd:
     name: postgresql
     state: started
     enabled: yes 
+
 - name: set password for postgres
   postgresql_user:
     db: postgres
     user: postgres
     password: postgres
+
 - name: create replication user
   postgresql_user:
     login_user: postgres
@@ -28,8 +42,15 @@
   with_items:
       - postgresql.conf
       - pg_hba.conf
+
 - name : restart postgres
   systemd:
     name: postgresql
     state: restarted
 
+- name: create replslot
+  postgresql_query:
+    login_password: postgres
+    db: postgres
+    query: SELECT pg_create_physical_replication_slot('replslot');
+  ignore_errors: true

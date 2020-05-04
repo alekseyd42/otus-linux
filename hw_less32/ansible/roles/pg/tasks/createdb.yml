@@ -1,0 +1,8 @@
+---
+- name: create database test
+  postgresql_db:
+    login_password: postgres
+    name: test
+    state: present
+- name: add data  to db test
+  shell: pgbench -Upostgres -i -s 10 test

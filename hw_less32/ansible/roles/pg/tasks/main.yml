@@ -2,12 +2,19 @@
 #w tasks file for roles/pg
 - name: update and packages
   include_tasks: epel_upd.yml
+
 - name: configure
   include_tasks: conf_os.yml
+
 - name: conf pgsql0
   include_tasks: pgsql0.yml
   when: ansible_fqdn == 'pgsql0'
+
 - name: conf pgsql1
   include_tasks: pgsql1.yml
   when: ansible_fqdn == 'pgsql1'
+
+- name: createdb.yml
+  include_tasks: createdb.yml
+  when: ansible_fqdn == 'pgsql0'
   

@@ -1,19 +1,17 @@
 ---
-# install EPEL-REPO and Update OS
-#epel-repo
 - name: install epel-repo
   dnf:
    name: epel-release
    state: latest
-# update OS
-- name: update OS
-  dnf:
-   name: '*'
-   state: latest
+
+#- name: update OS
+#  dnf:
+#   name: '*'
+#   state: latest
 # install packages
 - name: install packages
   dnf:
-   name: [vim,tree,htop,wget,telnet,glibc-langpack-ru,postgresql,postgresql-server,python3-psycopg2]
+   name: [vim,tree,htop,wget,telnet,glibc-langpack-ru,postgresql,postgresql-server,python3-psycopg2,postgresql-contrib]
    state: latest
 
     
