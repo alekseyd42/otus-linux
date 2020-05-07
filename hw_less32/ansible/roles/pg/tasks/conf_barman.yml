@@ -1,0 +1,24 @@
+---
+- name: copy .pgpass for barman
+  copy:
+    src: .pgpass
+    dest: /var/lib/barman/
+    group: barman
+    owner: barman
+    mode: '600'
+- name: copy .pgpass for root
+  copy:
+    src: .pgpass
+    dest: /root/
+    mode: '600'
+
+- name: copy barman conf file 
+  copy:
+    src: pgbar0/{{item}}
+    dest: /etc/barman.d/{{item}}
+  with_items:
+    - pgsql0.conf
+    - pgsql1.conf
+
+- name: add data  to db test
+  shell: pgbench -hpgsql0 -Upostgres -i -s 20 test

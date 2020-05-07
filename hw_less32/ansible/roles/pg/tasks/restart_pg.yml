@@ -1,0 +1,6 @@
+---
+hosts: pgsql0,pgsql1
+- name: RESTART POSTGRES
+  systemd:
+    name: postgresql
+    state: restarted

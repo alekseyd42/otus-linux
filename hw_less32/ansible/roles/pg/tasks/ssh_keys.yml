@@ -1,0 +1,32 @@
+---
+- name: add public for postgres user
+  authorized_key:
+    user: postgres
+    state: present
+    manage_dir: true
+    key: "{{ lookup('file', 'keys/key.pub') }}"
+
+- name: copy ssh keys for postgres user
+  copy:
+    src: keys/id_rsa
+    dest: '{{ pgpath }}.ssh/id_rsa'
+    owner: postgres
+    group: postgres
+    mode: '600'
+
+- name: add public for barman user
+  authorized_key:
+    user: barman
+    state: present
+    manage_dir: true
+    key: "{{ lookup('file', 'keys/key.pub') }}"
+  when: ansible_fqdn == 'pgbar0'
+
+- name: copy ssh for barman user 
+  copy:
+    src: keys/id_rsa
+    dest: '{{ barpath }}.ssh/id_rsa'
+    owner: barman
+    group: barman
+    mode: '600'
+  when: ansible_fqdn == 'pgbar0'
