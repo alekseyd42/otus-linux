@@ -71,5 +71,5 @@ srvname=postgres target_session_attrs=any
 ###Настроить правильное резервное копирование  
 Выполнять резервное копирование буду с использованием barman на сервер pgbar0.
 Конфиги для серверов pgsql0 и pgsql1.  
-[pgbar0](./ansible/roles/pg/files/pgbar0/pgsql0.conf)    
+[pgsql0](./ansible/roles/pg/files/pgbar0/pgsql0.conf)    
 [pgsql1](./ansible/roles/pg/files/pgbar0/pgsql1.conf)  
