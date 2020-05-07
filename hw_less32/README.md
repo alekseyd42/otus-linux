@@ -8,9 +8,9 @@ PostgreSQL
 ### Настроить hot_standby репликайцию  
 vagrant up   -  поднимает две вм pgsql0 (192.168.11.100) и pgsql1 (192.168.11.101) c centos8.Обновляет, утстанавливает постгрес, задайт пароли (l:postgres P:postgres, l:repluser P:password) для пользователей, создаёт базу и при помощи pg_basebackup синхронизирует.  
 файлы:  
-[pgsql0/postgres.conf](./ansible/roles/pg/files/pgsql0/)    
-[pgsql0/pg_hba.conf](ansible/roles/pg/files/pgsql0/pg_hba.conf)  
-[pgsql1/pg_hba.conf](ansible/roles/pg/files/pgsql1/pg_hba.conf)  
+[pgsql0/postgres.conf](./ansible/roles/pg/files/pgsql0/postgresql.conf)    
+[pgsql0/pg_hba.conf](./ansible/roles/pg/files/pgsql0/pg_hba.conf)  
+[pgsql1/pg_hba.conf](./ansible/roles/pg/files/pgsql1/pg_hba.conf)  
 конфиг recovery.conf формируется автоматически , при выполнение комманды   
 ```
 pg_basebackup -h 192.168.11.100 -D "{{ pgpath }}data" -U repluser -v -P --write-recovery-conf -X stream -S replslot" '
@@ -71,5 +71,5 @@ srvname=postgres target_session_attrs=any
 ###Настроить правильное резервное копирование  
 Выполнять резервное копирование буду с использованием barman на сервер pgbar0.
 Конфиги для серверов pgsql0 и pgsql1.  
-[pgbar0](ansible/roles/pg/files/pgbar0/pgsql0.conf)    
-[pgsql1](ansible/roles/pg/files/pgbar0/pgsql1.conf)  
+[pgbar0](./ansible/roles/pg/files/pgbar0/pgsql0.conf)    
+[pgsql1](./ansible/roles/pg/files/pgbar0/pgsql1.conf)  
