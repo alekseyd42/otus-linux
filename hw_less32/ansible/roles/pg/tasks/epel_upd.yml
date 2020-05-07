@@ -8,10 +8,9 @@
 #  dnf:
 #   name: '*'
 #   state: latest
-# install packages
+
 - name: install packages
   dnf:
    name: [vim,tree,htop,wget,telnet,glibc-langpack-ru,postgresql,postgresql-server,python3-psycopg2,postgresql-contrib]
    state: latest
-
     

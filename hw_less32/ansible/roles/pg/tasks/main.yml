@@ -1,7 +1,11 @@
 ---
 #w tasks file for roles/pg
-- name: update and packages
+- name: update and packages#
   include_tasks: epel_upd.yml
+
+- name: update and package for pgbar0
+  include_tasks: epel_upd_bar.yml
+  when: ansible_fqdn == 'pgbar0'
 
 - name: configure
   include_tasks: conf_os.yml
@@ -17,4 +21,12 @@
 - name: createdb.yml
   include_tasks: createdb.yml
   when: ansible_fqdn == 'pgsql0'
+
+- name: conf barman
+  include_tasks: conf_barman.yml
+  when: ansible_fqdn == 'pgbar0'
+
+- name: auth keys
+  include_tasks: ssh_keys.yml
+
   

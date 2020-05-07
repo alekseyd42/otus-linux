@@ -1,3 +1,4 @@
 127.0.0.1   localhost   localhost
 192.168.11.100  pgsql0  pgsql0
 192.168.11.101  pgsql1  pgsql1
+192.168.11.102  pgbar0  pgbar0

@@ -10,9 +10,18 @@
 
 - name: copy .pgpass
   copy:
-   src: .pgpass
-   dest: /root/.pgpass
+   src: '.pgpass'
+   dest: '{{item}}.pgpass'
    mode: '600' 
+  with_items:
+    - /root/
+    - "{{pgpath}}"
+
+- name: change owner for ,pgpass to potgres user
+  file:
+    path: '{{pgpath}}.pgpass'
+    group: postgres
+    owner: postgres
 
 - name: start PG
   systemd:
@@ -52,5 +61,8 @@
   postgresql_query:
     login_password: postgres
     db: postgres
-    query: SELECT pg_create_physical_replication_slot('replslot');
+    query: SELECT pg_create_physical_replication_slot('{{item}}');
+  with_items:
+    - replslot
+    - barman
   ignore_errors: true

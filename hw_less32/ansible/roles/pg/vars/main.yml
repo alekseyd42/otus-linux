@@ -1,3 +1,4 @@
 ---
 # vars file for roles/pg
 pgpath: /var/lib/pgsql/
+barpath: /var/lib/barman/

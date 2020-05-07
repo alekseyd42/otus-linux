@@ -3,24 +3,31 @@
   stat:
    path: '{{ pgpath }}/data/PG_VERSION'
   register: pginitdb
+
 - name: Create data cluster
   shell: "su postgres -c '/usr/bin/initdb -D /var/lib/pgsql/data' "
   when: pginitdb.stat.exists == False  
-- name: Create .pgpass file for postgres user
+
+- name: copy .pgpass
+  copy:
+   src: '.pgpass'
+   dest: '{{item}}.pgpass'
+   mode: '600' 
+  with_items:
+    - /root/
+    - "{{pgpath}}"
+
+- name: change owner for ,pgpass to potgres user
   file:
-   path: '{{ pgpath }}.pgpass'
-   state: touch
-   group: postgres
-   owner: postgres
-   mode: '0600'
+    path: '{{pgpath}}.pgpass'
+    group: postgres
+    owner: postgres
+
 - name: Clear PG data directory
   file:
    path: '{{ pgpath }}/data/'
    state: absent
-- name: add replication pass
-  lineinfile:
-   path: '{{ pgpath }}.pgpass'
-   line: '*:*:*:repluser:password'
+
 - name: sync PGdata from server pgsql0
   shell: 'su - postgres -c "pg_basebackup -h 192.168.11.100 -D "{{ pgpath }}data" -U repluser -v -P --write-recovery-conf -X stream -S replslot" '
   when: pginitdb.stat.exists == False
@@ -31,4 +38,16 @@
     dest: /var/lib/pgsql/data/{{ item }}
   with_items:
       - pg_hba.conf
-  notify: PG Start
+  
+- name: start postgres
+  systemd:
+    name: postgresql
+    state: started
+
+- name: create replslot
+  postgresql_query:
+    login_password: postgres
+    db: postgres
+    query: SELECT pg_create_physical_replication_slot('{{item}}');
+  with_items:
+    - barman
