@@ -6,9 +6,9 @@ PostgreSQL
 Для сдачи работы присылаем ссылку на репозиторий, в котором должны обязательно быть Vagranfile и плейбук Ansible, конфигурационные файлы postgresql.conf, pg_hba.conf и recovery.conf, а так же конфиг barman, либо скрипт резервного копирования. Команда "vagrant up" должна поднимать машины с настроенной репликацией и резервным копированием. Рекомендуется в README.md файл вложить результаты (текст или скриншоты) проверки работы репликации и резервного копирования. 
 
 ### Настроить hot_standby репликайцию  
-vagrant up   -  поднимает две вм pgsql0 (192.168.11.100) и pgsql1 (192.168.11.101) c centos8.Обновляет, утстанавливает постгрес, задайт пароли (l:postgres P:postgres, l:repluser P:password) для пользователей, создаёт базу и при помощи pg_basebackup синхронизирует.
+vagrant up   -  поднимает две вм pgsql0 (192.168.11.100) и pgsql1 (192.168.11.101) c centos8.Обновляет, утстанавливает постгрес, задайт пароли (l:postgres P:postgres, l:repluser P:password) для пользователей, создаёт базу и при помощи pg_basebackup синхронизирует.  
 файлы:  
-[pgsql0/postgres.conf](ansible/roles/pg/files/pgsql0/postgres.conf)    
+[pgsql0/postgres.conf](./ansible/roles/pg/files/pgsql0/postgres.conf)    
 [pgsql0/pg_hba.conf](ansible/roles/pg/files/pgsql0/pg_hba.conf)  
 [pgsql1/pg_hba.conf](ansible/roles/pg/files/pgsql1/pg_hba.conf)  
 конфиг recovery.conf формируется автоматически , при выполнение комманды   
