@@ -1,0 +1,13 @@
+---
+- name: conf systemd unit
+  template:
+    src: consul.service.j2
+    dest: /etc/systemd/system/consul.service
+- name: conf consul server
+  template:
+    src: consul.json.j2
+    dest: /etc/consul.d/consul.json
+    owner: consul
+    group: consul
+  notify:
+    - start consul

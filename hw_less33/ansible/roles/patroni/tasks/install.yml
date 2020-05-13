@@ -1,0 +1,10 @@
+---
+- name: Install dnf packages
+  dnf:
+   name: ['python3','gcc' ,'platform-python-devel', 'python3-psycopg2', 'postgresql-server']
+   state: present
+- name: Install pip packages
+  pip:
+    name: [patroni-consul,patroni]
+    state: present
+    

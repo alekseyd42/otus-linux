@@ -12,7 +12,7 @@ MACHINES = {
     :ip_addr => '192.168.11.101',
 
   },
-  :'pgsql2' => {
+  :'consul' => {
   :box_name => "centos/8",
   :ip_addr => '192.168.11.102',
 

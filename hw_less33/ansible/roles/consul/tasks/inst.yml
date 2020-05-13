@@ -1,0 +1,32 @@
+---
+- name: download consul
+  get_url:
+   url: 'https://releases.hashicorp.com/consul/1.7.3/consul_1.7.3_linux_amd64.zip'
+   dest: '$HOME'
+- name: extract consul
+  unarchive:
+    src: $HOME/consul_1.7.3_linux_amd64.zip
+    dest: /usr/local/sbin
+    remote_src: yes
+- name: consul autocomplete
+  shell: "{{item}}" 
+  with_items:
+     - '/usr/local/sbin/consul -autocomplete-install'
+     - 'complete -C /usr/local/sbin/consul consul'
+  ignore_errors: yes
+- name: Consul | Create consul user
+  user:
+    name: consul
+    shell: /bin/false
+    home: /etc/consul.d
+- name: Consul | Prepare consul directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: consul
+    group: consul
+  with_items:
+      - /etc/consul.d
+      - /opt/consul
+
+

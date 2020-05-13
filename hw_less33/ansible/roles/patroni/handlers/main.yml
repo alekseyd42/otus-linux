@@ -1,2 +1,7 @@
 ---
 # handlers file for roles/patroni
+- name: start consul
+  systemd:
+    name: consul
+    enabled: true
+    state: started

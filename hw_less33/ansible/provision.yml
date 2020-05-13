@@ -1,5 +1,12 @@
 ---
-hosts: all
-become: yes
-roles:
-  - patr 
+- name: CONSUL
+  hosts: dcs
+  become: yes
+  roles:
+     - consul
+
+- name: PATRONI
+  hosts: dbs
+  become: yes
+  roles:
+   - patroni
