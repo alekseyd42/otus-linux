@@ -1,0 +1,23 @@
+---
+# tasks file for roles/haproxy
+- name: install HAPROXY 
+  dnf:
+   name: [haproxy,policycoreutils-python-utils]
+   state: present
+
+- name: copy HAPROXY conf file
+  template:
+    src: haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+    mode: 644
+- name: conf selinux for haproxy
+  shell: "{{item}}"
+  with_items: 
+    - 'semanage port -m -t http_port_t -p tcp 5000'
+    - 'semanage port -m -t http_port_t -p tcp 7000'
+    - 'semanage port -m -t http_port_t -p tcp 5432'
+- name: start HAPROXY
+  systemd:
+    name: haproxy
+    state: started
+    enabled: yes

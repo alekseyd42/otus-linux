@@ -5,6 +5,6 @@
    state: present
 - name: Install pip packages
   pip:
-    name: [patroni-consul,patroni]
+    name: [python-consul,patroni]
     state: present
     

@@ -30,9 +30,9 @@ bootstrap:
   - data-checksums
 
 postgresql:
-  listen: {{ ansible_enp0s8.ipv4.address }}:5432
+  listen: {{ ansible_eth1.ipv4.address }}:5432
   bin_dir: /usr/bin
-  connect_address: {{ ansible_enp0s8.ipv4.address }}:5432
+  connect_address: {{ ansible_eth1.ipv4.address }}:5432
   data_dir: /var/lib/pgsql/data
   pgpass: /tmp/.pgpass
   authentication:
@@ -61,6 +61,7 @@ postgresql:
   - host replication replicator 127.0.0.1/32 md5
   - host replication replicator 192.168.11.100/0 md5
   - host replication replicator 192.168.11.101/0 md5
+  - host replication replicator 192.168.11.104/0 md5
   - host all all 0.0.0.0/0 md5
 
 log:

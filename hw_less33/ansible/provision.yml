@@ -10,3 +10,11 @@
   become: yes
   roles:
    - patroni
+
+- name: HAPROXY
+  hosts: prx
+  become: yes
+  roles:
+   - haproxy
+  tags:
+    - haproxy

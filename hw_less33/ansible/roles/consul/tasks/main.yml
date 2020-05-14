@@ -12,8 +12,8 @@
 #inst consul
 - include: inst.yml
   tags:
-    - install
+    - install-consul
 #conf consul
 - include: conf.yml
   tags:
-   - conf
+   - conf-consul
