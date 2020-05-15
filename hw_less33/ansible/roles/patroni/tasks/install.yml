@@ -1,7 +1,7 @@
 ---
 - name: Install dnf packages
   dnf:
-   name: ['python3','gcc' ,'platform-python-devel', 'python3-psycopg2', 'postgresql-server']
+   name: ['python3','gcc' ,'platform-python-devel', 'python3-psycopg2', 'postgresql-server','postgresql-contrib']
    state: present
 - name: Install pip packages
   pip:

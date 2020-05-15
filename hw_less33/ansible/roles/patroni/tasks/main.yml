@@ -6,3 +6,8 @@
   include: conf.yml
   tags:
     - conf-patroni
+- name:
+  copy:
+    src: .pgpass
+    dest: $HOME/.pgpass
+    mode: 600
