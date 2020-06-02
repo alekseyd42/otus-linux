@@ -1,0 +1,8 @@
+---
+- name: conf resolv.conf
+  lineinfile:
+    dest: /etc/resolv.conf
+    regexp: '^search'
+    line: 'search lab.lan'
+- name: configure IPA-SERVER
+  command: ipa-server-install -U -p otuslinux -a otuslinux -n lab.lan -r LAB.LAN --hostname server.lab.lan --setup-dns --auto-forwarder --no-reverse

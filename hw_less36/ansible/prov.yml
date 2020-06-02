@@ -1,0 +1,7 @@
+---
+- name: NFS
+  hosts: servers
+  become: yes
+  roles:
+     - ipa
+  #  - nfs

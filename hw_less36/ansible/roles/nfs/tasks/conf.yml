@@ -1,0 +1,33 @@
+---
+- name: copy /etc/hosts
+  template:
+    src: hosts.j2
+    dest: /etc/hosts
+
+- name: mkdir for nfs share folder
+  file:
+    path: /nfs_share
+    state: directory
+    mode: o+w
+
+- name: copy /etc/exports
+  template:
+    src: exports.j2
+    dest: /etc/exports
+
+- name: apply /etc/exports
+  command: exportfs -arv
+
+- firewalld:
+    service: '{{item}}'
+    permanent: yes
+    state: enabled
+  with_items:
+    - nfs
+    - rpc-bind
+    - mountd
+
+- name: restart firewalld
+  systemd:
+    name: firewalld
+    state: restarted

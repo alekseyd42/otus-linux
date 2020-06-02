@@ -1,0 +1,8 @@
+---
+# tasks file for roles/ipa
+- name: install ipa server
+  include_tasks: install.yml
+
+- name: configure ipa server 
+  include_tasks: conf.yml
+  

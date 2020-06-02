@@ -1,0 +1,7 @@
+---
+# tasks file for roles/nfs
+- name: install NFS
+  include_tasks: install.yml
+
+- name: configure nfs server
+  include_tasks: conf.yml

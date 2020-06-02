@@ -1,0 +1,5 @@
+- name: install ipa server
+  dnf:
+    name: ['ipa-server','ipa-server-dns' ]
+    state: present
+    skip_broken: yes

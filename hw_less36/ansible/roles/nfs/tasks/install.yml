@@ -1,0 +1,10 @@
+---
+- name: install nfs server
+  dnf:
+    name: ['nfs-utils',]
+    state: present
+- name: enaled nfs server
+  systemd:
+    name: nfs-server
+    state: started
+    enabled: yes
