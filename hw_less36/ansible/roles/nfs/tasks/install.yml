@@ -1,7 +1,7 @@
 ---
 - name: install nfs server
   dnf:
-    name: ['nfs-utils',]
+    name: ['nfs-utils']
     state: present
 - name: enaled nfs server
   systemd:

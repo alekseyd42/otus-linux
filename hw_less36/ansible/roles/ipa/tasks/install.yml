@@ -1,5 +1,10 @@
+---
+- name: install module 
+  dnf:
+    name: '@idm:DL1'
+    state: present
+  
 - name: install ipa server
   dnf:
     name: ['ipa-server','ipa-server-dns' ]
     state: present
-    skip_broken: yes

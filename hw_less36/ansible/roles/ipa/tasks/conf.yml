@@ -1,8 +1,40 @@
 ---
+- name: copy /etc/hosts
+  template:
+    src: hosts.j2
+    dest: /etc/hosts
+
 - name: conf resolv.conf
   lineinfile:
     dest: /etc/resolv.conf
     regexp: '^search'
     line: 'search lab.lan'
+
 - name: configure IPA-SERVER
   command: ipa-server-install -U -p otuslinux -a otuslinux -n lab.lan -r LAB.LAN --hostname server.lab.lan --setup-dns --auto-forwarder --no-reverse
+
+- firewalld:
+    service: '{{item}}'
+    permanent: yes
+    state: enabled
+  with_items:
+    - freeipa-ldap
+    - freeipa-ldaps
+    - dns
+    - ntp
+    - http
+    - http
+
+- name: restart firewalld
+  systemd:
+    name: firewalld
+    state: restarted
+- name: Add nfs server
+  ipa_service:
+     name: nfs/server.lab.lan
+     state: present
+     ipa_host: server.lab.lan
+     ipa_user: admin
+     ipa_pass: otuslinux
+
+     

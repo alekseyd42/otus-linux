@@ -1,4 +1,7 @@
 ---
+#- name: conf ipa-client-automount
+#  command: 'ipa-client-automount -U'
+
 - name: copy /etc/hosts
   template:
     src: hosts.j2

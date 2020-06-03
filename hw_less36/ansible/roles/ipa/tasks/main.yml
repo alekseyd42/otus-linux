@@ -5,4 +5,5 @@
 
 - name: configure ipa server 
   include_tasks: conf.yml
+
   
